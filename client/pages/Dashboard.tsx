@@ -345,12 +345,12 @@ export default function Dashboard() {
                     <tbody className="divide-y divide-gray-200">
                       {[
                         { id: 'Leakage Sant Carles', ratio: '12 L/s', difficulty: 'Alta', value: '€6,456', assignee: 'Toni', date: '25/06/2025', status: 'Recent', statusColor: 'bg-yellow-100 text-yellow-800' },
-                        { id: 'Leakage #4', ratio: '15 L/s', difficulty: 'Mitja', value: '€6,006', assignee: 'Alex', date: '25/06/2025', status: 'Recent', statusColor: 'bg-yellow-100 text-yellow-800', selected: true },
+                        { id: 'Leakage #4', ratio: '15 L/s', difficulty: 'Mitja', value: '€6,006', assignee: 'Alex', date: '25/06/2025', status: 'Recent', statusColor: 'bg-yellow-100 text-yellow-800' },
                         { id: 'Leakage #5', ratio: '20 L/s', difficulty: 'Baixa', value: '€2,762', assignee: 'Jordi', date: '25/06/2025', status: 'Nova', statusColor: 'bg-blue-100 text-blue-800' },
-                        { id: 'Leakage #6', ratio: '20 L/s', difficulty: 'No Aplica', value: '€2,517', assignee: 'Toni', date: '30/06/2024', status: 'Cancelled', statusColor: 'bg-red-100 text-red-800', selected: true },
+                        { id: 'Leakage #6', ratio: '20 L/s', difficulty: 'No Aplica', value: '€2,517', assignee: 'Toni', date: '30/06/2024', status: 'Cancelled', statusColor: 'bg-red-100 text-red-800' },
                         { id: 'Leakage #7', ratio: '20 L/s', difficulty: 'Alta', value: '€9,898', assignee: 'Toni', date: '25/06/2025', status: 'Recent', statusColor: 'bg-yellow-100 text-yellow-800' },
                         { id: 'Leakage #8', ratio: '20 L/s', difficulty: 'Alta', value: '€4,075', assignee: 'Alex', date: '25/06/2025', status: 'Nova', statusColor: 'bg-blue-100 text-blue-800' },
-                        { id: 'Leakage #9', ratio: '20 L/s', difficulty: 'Baixa', value: '€2,189', assignee: 'Jordi', date: '25/07/2025', status: 'Recent', statusColor: 'bg-yellow-100 text-yellow-800', selected: true },
+                        { id: 'Leakage #9', ratio: '20 L/s', difficulty: 'Baixa', value: '€2,189', assignee: 'Jordi', date: '25/07/2025', status: 'Recent', statusColor: 'bg-yellow-100 text-yellow-800' },
                         { id: 'Leakage #10', ratio: '20 L/s', difficulty: 'Mitja', value: '€8,800', assignee: 'Jordi', date: '25/06/2025', status: 'Nova', statusColor: 'bg-blue-100 text-blue-800' },
                         { id: 'Leakage #12', ratio: '20 L/s', difficulty: 'Baixa', value: '€7,635', assignee: 'Alex', date: '25/05/2024', status: 'Cancelled', statusColor: 'bg-red-100 text-red-800' },
                         { id: 'Leakage #13', ratio: '20 L/s', difficulty: 'Mitja', value: '€8,535', assignee: 'Toni', date: '25/03/2025', status: 'Arreglada', statusColor: 'bg-green-100 text-green-800' }
