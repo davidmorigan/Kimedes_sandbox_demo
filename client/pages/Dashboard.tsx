@@ -231,7 +231,127 @@ export default function Dashboard() {
         </div>
 
         {/* Content based on active section */}
-        {activeSection === 'Detecció de fuites' ? (
+        {activeSection === 'Localització de Fuites' ? (
+          /* Localització de Fuites Content */
+          <div>
+            {/* Indicadors Section */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-semibold text-gray-900">Indicadors</h2>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <span>Mes en curs</span>
+                  <Calendar className="w-4 h-4" />
+                </div>
+              </div>
+
+              {/* Same metrics as Detecció de fuites */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <Card className="bg-pink-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-sm font-medium text-gray-700">Cost econòmic per fuites</h3>
+                      <div className="p-2 rounded-lg bg-pink-100">
+                        <FileText className="w-4 h-4 text-pink-600" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-2xl font-bold text-gray-900">$72k</p>
+                      <div className="flex items-center text-sm">
+                        <span className="text-red-600">+ 9.67%</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-teal-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-sm font-medium text-gray-700">Fuites Noves</h3>
+                      <div className="p-2 rounded-lg bg-teal-100">
+                        <Droplets className="w-4 h-4 text-teal-600" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-2xl font-bold text-gray-900">3</p>
+                      <div className="flex items-center text-sm">
+                        <span className="text-red-600">+ 5.39%</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-orange-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-sm font-medium text-gray-700">Aigua estimada perduda</h3>
+                      <div className="p-2 rounded-lg bg-orange-100">
+                        <Droplets className="w-4 h-4 text-orange-600" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-2xl font-bold text-gray-900">20 M3/dia</p>
+                      <div className="flex items-center text-sm">
+                        <span className="text-red-600">+ 4.53%</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Map Visualization Section */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-semibold text-gray-900">Visualització estimada de les fuites</h2>
+              </div>
+
+              {/* Map Container */}
+              <div className="bg-white rounded-lg border overflow-hidden">
+                <div className="relative h-96 bg-gray-100">
+                  <img
+                    src={`https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F8577503519b648808f3f84c4fdef2323?format=webp&width=800`}
+                    alt="Mapa de visualització de fuites"
+                    className="w-full h-full object-cover"
+                  />
+
+                  {/* Map controls and overlays would go here in a real implementation */}
+                  <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-3">
+                    <div className="text-xs text-gray-600 mb-2">Llegenda</div>
+                    <div className="space-y-1 text-xs">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <span>Fuites actives</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <span>Xarxa d'aigua</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span>Sensors</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Sample leak indicators (positioned over the map) */}
+                  <div className="absolute top-20 left-32 bg-red-500 text-white p-2 rounded text-xs">
+                    LR: 15.20 L/s<br/>
+                    Cost: 2504 €<br/>
+                    Dificultat: High
+                    <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-red-500"></div>
+                  </div>
+
+                  <div className="absolute bottom-32 right-40 bg-red-500 text-white p-2 rounded text-xs">
+                    LR: 8.5 L/s<br/>
+                    Cost: 1200 €<br/>
+                    Dificultat: Medium
+                    <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-red-500"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === 'Detecció de fuites' ? (
           /* Leak Detection Content */
           <div>
             {/* Indicadors Section */}
