@@ -463,7 +463,7 @@ export default function Dashboard() {
 
               {/* Table */}
               <div className="bg-white rounded-lg border overflow-hidden">
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto min-w-full">
                   <table className="w-full">
                     <thead className="bg-gray-50 border-b">
                       <tr>
