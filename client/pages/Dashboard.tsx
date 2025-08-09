@@ -32,7 +32,7 @@ export default function Dashboard() {
   };
 
   const sidebarItems = [
-    { icon: BarChart3, label: 'Panel de control', active: true },
+    { icon: BarChart3, label: 'Panell de control', active: true },
     { icon: BarChart3, label: 'Analítica' },
     { icon: MapPin, label: 'Localització de Fuites' },
     { icon: Droplets, label: 'Detecció de fuites' },
