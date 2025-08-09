@@ -1,24 +1,45 @@
-# Enable rewrite engine
+# Kimedes - Configuration for Ionos hosting
 RewriteEngine On
 
-# Handle Angular and React Router
-RewriteBase /
+# Force HTTPS (recommended for production)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Handle API requests to Node.js backend (if needed)
-RewriteRule ^api/(.*)$ /server/node-build.mjs [L,QSA]
-
-# Handle all other requests - send to React app
+# Handle React Router - SPA routing
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /dist/spa/index.html [L]
+RewriteCond %{REQUEST_URI} !^/(assets|images|css|js)/
+RewriteRule . /index.html [L]
 
 # Security headers
-Header always set X-Frame-Options "SAMEORIGIN"
-Header always set X-Content-Type-Options "nosniff"
-Header always set X-XSS-Protection "1; mode=block"
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
 
 # Cache static assets
-<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+<IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresDefault "access plus 1 month"
-</FilesMatch>
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Compress files
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
