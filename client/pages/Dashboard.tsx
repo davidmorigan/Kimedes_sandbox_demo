@@ -244,7 +244,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-4 lg:p-8">
+      <div className="flex-1 lg:ml-0 p-4 lg:p-8">
         {/* Mobile Header with Hamburger */}
         <div className="lg:hidden flex items-center justify-between mb-6 bg-white p-4 rounded-lg shadow-sm">
           <button
