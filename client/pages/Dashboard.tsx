@@ -162,7 +162,13 @@ export default function Dashboard() {
               {adminItems.map((item, index) => (
                 <button
                   key={index}
-                  onClick={() => setActiveSection(item.label)}
+                  onClick={() => {
+                    if (item.label === 'Informes de Freu') {
+                      setShowModal(true);
+                    } else {
+                      setActiveSection(item.label);
+                    }
+                  }}
                   className="w-full flex items-center px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <item.icon className="w-4 h-4 mr-3" />
