@@ -51,7 +51,7 @@ export default function Dashboard() {
   const adminItems = [
     { icon: FileText, label: "Facturació" },
     { icon: ShieldAlert, label: "Informes de Freu" },
-    { icon: Bell, label: "Alertes", hasNotification: true },
+    { icon: AlertTriangle, label: "Alertes", hasNotification: true },
     { icon: Users, label: "Gestió de Personal" },
     { icon: Radio, label: "Control de Sensors" },
     { icon: Bell, label: "Notificacions" },
