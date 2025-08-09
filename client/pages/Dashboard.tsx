@@ -256,7 +256,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-2xl font-bold text-gray-900">$72k</p>
+                      <p className="text-2xl font-bold text-gray-900">€72k</p>
                       <div className="flex items-center text-sm">
                         <span className="text-red-600">+ 9.67%</span>
                       </div>
@@ -336,7 +336,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-2xl font-bold text-gray-900">$72k</p>
+                      <p className="text-2xl font-bold text-gray-900">€72k</p>
                       <div className="flex items-center text-sm">
                         <span className="text-red-600">+ 9.67%</span>
                       </div>
