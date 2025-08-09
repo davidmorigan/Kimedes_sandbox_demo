@@ -306,49 +306,9 @@ export default function Dashboard() {
                 <h2 className="text-lg font-semibold text-gray-900">Visualització estimada de les fuites</h2>
               </div>
 
-              {/* Map Container */}
+              {/* Interactive Map Container */}
               <div className="bg-white rounded-lg border overflow-hidden">
-                <div className="relative h-96 bg-gray-100">
-                  <img
-                    src={`https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F8577503519b648808f3f84c4fdef2323?format=webp&width=800`}
-                    alt="Mapa de visualització de fuites"
-                    className="w-full h-full object-cover"
-                  />
-
-                  {/* Map controls and overlays would go here in a real implementation */}
-                  <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg p-3">
-                    <div className="text-xs text-gray-600 mb-2">Llegenda</div>
-                    <div className="space-y-1 text-xs">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <span>Fuites actives</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <span>Xarxa d'aigua</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span>Sensors</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Sample leak indicators (positioned over the map) */}
-                  <div className="absolute top-20 left-32 bg-red-500 text-white p-2 rounded text-xs">
-                    LR: 15.20 L/s<br/>
-                    Cost: 2504 €<br/>
-                    Dificultat: High
-                    <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-red-500"></div>
-                  </div>
-
-                  <div className="absolute bottom-32 right-40 bg-red-500 text-white p-2 rounded text-xs">
-                    LR: 8.5 L/s<br/>
-                    Cost: 1200 €<br/>
-                    Dificultat: Medium
-                    <div className="absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-red-500"></div>
-                  </div>
-                </div>
+                <LeakMap />
               </div>
             </div>
           </div>
