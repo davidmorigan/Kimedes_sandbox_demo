@@ -26,6 +26,7 @@ import {
   ShieldAlert,
   Radio,
   Home,
+  ScrollText,
 } from "lucide-react";
 
 export default function Dashboard() {
