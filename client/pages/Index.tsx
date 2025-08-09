@@ -1,9 +1,23 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Droplets, Euro, Leaf, Calculator, MapPin, Users, Building } from "lucide-react";
+import {
+  Droplets,
+  Euro,
+  Leaf,
+  Calculator,
+  MapPin,
+  Users,
+  Building,
+} from "lucide-react";
 
 interface CalculationResults {
   waterLossLiters: number;
@@ -23,41 +37,41 @@ export default function Index() {
   // Catalonia-specific rates (2024 estimates)
   const WATER_COST_PER_M3 = 2.15; // €/m³ average in Catalonia
   const CO2_PER_M3_WATER = 0.34; // kg CO2/m³ for water treatment and distribution in Catalonia
-  
+
   const calculateSavings = () => {
     const pop = parseFloat(population);
     const currentLoss = parseFloat(currentWaterLoss);
     const improvement = parseFloat(improvementPercentage);
-    
+
     if (!pop || !currentLoss || !improvement) return;
-    
+
     // Calculate annual water loss reduction
-    const waterLossLiters = (currentLoss * improvement / 100) * pop * 365;
+    const waterLossLiters = ((currentLoss * improvement) / 100) * pop * 365;
     const waterLossM3 = waterLossLiters / 1000;
-    
+
     // Calculate money saved (water cost + treatment cost)
     const moneySaved = waterLossM3 * WATER_COST_PER_M3;
-    
+
     // Calculate CO2 saved (treatment + distribution energy)
     const co2Saved = waterLossM3 * CO2_PER_M3_WATER;
-    
+
     // CO2 equivalency (trees needed to absorb this CO2)
     const treesEquivalent = Math.round(co2Saved / 22); // Average tree absorbs 22kg CO2/year
     const co2Equivalent = `${treesEquivalent} trees for 1 year`;
-    
+
     setResults({
       waterLossLiters,
       waterLossM3,
       moneySaved,
       co2Saved,
-      co2Equivalent
+      co2Equivalent,
     });
   };
 
   const formatNumber = (num: number, decimals: number = 0) => {
-    return new Intl.NumberFormat('ca-ES', { 
+    return new Intl.NumberFormat("ca-ES", {
       minimumFractionDigits: decimals,
-      maximumFractionDigits: decimals 
+      maximumFractionDigits: decimals,
     }).format(num);
   };
 
@@ -70,7 +84,9 @@ export default function Index() {
             <div className="p-3 bg-primary/10 rounded-full">
               <Droplets className="h-8 w-8 text-primary" />
             </div>
-            <h1 className="text-4xl font-bold text-foreground">AiguaCatalunya</h1>
+            <h1 className="text-4xl font-bold text-foreground">
+              AiguaCatalunya
+            </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Calculadora de conservació d'aigua per municipis catalans
@@ -89,7 +105,8 @@ export default function Index() {
                 Dades del Municipi
               </CardTitle>
               <CardDescription>
-                Introdueix les dades del teu municipi per calcular els estalvis potencials
+                Introdueix les dades del teu municipi per calcular els estalvis
+                potencials
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6 pt-6">
@@ -123,7 +140,10 @@ export default function Index() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="currentLoss" className="flex items-center gap-2">
+                <Label
+                  htmlFor="currentLoss"
+                  className="flex items-center gap-2"
+                >
                   <Droplets className="h-4 w-4" />
                   Pèrdua actual d'aigua per habitant (litres/dia)
                 </Label>
@@ -141,7 +161,10 @@ export default function Index() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="improvement" className="flex items-center gap-2">
+                <Label
+                  htmlFor="improvement"
+                  className="flex items-center gap-2"
+                >
                   <Building className="h-4 w-4" />
                   Millora esperada (%)
                 </Label>
@@ -158,10 +181,12 @@ export default function Index() {
                 </p>
               </div>
 
-              <Button 
+              <Button
                 onClick={calculateSavings}
                 className="w-full h-12 text-lg"
-                disabled={!population || !currentWaterLoss || !improvementPercentage}
+                disabled={
+                  !population || !currentWaterLoss || !improvementPercentage
+                }
               >
                 Calcular Estalvis
               </Button>
@@ -187,7 +212,9 @@ export default function Index() {
                       <div className="p-2 bg-blue-100 rounded-full">
                         <Droplets className="h-6 w-6 text-blue-600" />
                       </div>
-                      <h3 className="text-xl font-semibold text-blue-900">Estalvi d'Aigua</h3>
+                      <h3 className="text-xl font-semibold text-blue-900">
+                        Estalvi d'Aigua
+                      </h3>
                     </div>
                     <div className="space-y-2">
                       <p className="text-3xl font-bold text-blue-800">
@@ -197,7 +224,8 @@ export default function Index() {
                         {formatNumber(results.waterLossLiters)} litres anuals
                       </p>
                       <p className="text-sm text-blue-600">
-                        Equivalent a {formatNumber(results.waterLossM3 / 2.5)} piscines olímpiques
+                        Equivalent a {formatNumber(results.waterLossM3 / 2.5)}{" "}
+                        piscines olímpiques
                       </p>
                     </div>
                   </div>
@@ -208,7 +236,9 @@ export default function Index() {
                       <div className="p-2 bg-green-100 rounded-full">
                         <Euro className="h-6 w-6 text-green-600" />
                       </div>
-                      <h3 className="text-xl font-semibold text-green-900">Estalvi Econòmic</h3>
+                      <h3 className="text-xl font-semibold text-green-900">
+                        Estalvi Econòmic
+                      </h3>
                     </div>
                     <div className="space-y-2">
                       <p className="text-3xl font-bold text-green-800">
@@ -218,7 +248,11 @@ export default function Index() {
                         A {WATER_COST_PER_M3}€/m³ (tarifa mitjana Catalunya)
                       </p>
                       <p className="text-sm text-green-600">
-                        {formatNumber(results.moneySaved / parseFloat(population), 2)} € per habitant/any
+                        {formatNumber(
+                          results.moneySaved / parseFloat(population),
+                          2,
+                        )}{" "}
+                        € per habitant/any
                       </p>
                     </div>
                   </div>
@@ -229,7 +263,9 @@ export default function Index() {
                       <div className="p-2 bg-teal-100 rounded-full">
                         <Leaf className="h-6 w-6 text-teal-600" />
                       </div>
-                      <h3 className="text-xl font-semibold text-teal-900">Reducció CO₂</h3>
+                      <h3 className="text-xl font-semibold text-teal-900">
+                        Reducció CO₂
+                      </h3>
                     </div>
                     <div className="space-y-2">
                       <p className="text-3xl font-bold text-teal-800">
@@ -247,11 +283,17 @@ export default function Index() {
 
                 {/* Additional Info */}
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold text-gray-800 mb-2">Informació adicional:</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">
+                    Informació adicional:
+                  </h4>
                   <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Càlculs basats en dades de l'Agència Catalana de l'Aigua</li>
+                    <li>
+                      • Càlculs basats en dades de l'Agència Catalana de l'Aigua
+                    </li>
                     <li>• Costos d'aigua: mitjana ponderada Catalunya 2024</li>
-                    <li>• Factor CO₂: inclou tractament i distribució d'aigua</li>
+                    <li>
+                      • Factor CO₂: inclou tractament i distribució d'aigua
+                    </li>
                     <li>• Estalvis calculats per a un any sencer</li>
                   </ul>
                 </div>
@@ -275,34 +317,39 @@ export default function Index() {
                     <div>
                       <h4 className="font-semibold">Escassetat d'aigua</h4>
                       <p className="text-sm text-muted-foreground">
-                        Catalunya pateix estràs hídric regular, especialment a l'estiu
+                        Catalunya pateix estràs hídric regular, especialment a
+                        l'estiu
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <Euro className="h-5 w-5 text-green-500 mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Estalvi municipal</h4>
                       <p className="text-sm text-muted-foreground">
-                        Reduir pèrdues millora l'eficiència i redueix costos operatius
+                        Reduir pèrdues millora l'eficiència i redueix costos
+                        operatius
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
                     <Leaf className="h-5 w-5 text-teal-500 mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Impacte ambiental</h4>
                       <p className="text-sm text-muted-foreground">
-                        Menys tractament d'aigua significa menys emissions de CO₂
+                        Menys tractament d'aigua significa menys emissions de
+                        CO₂
                       </p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="mt-6 p-4 bg-primary/5 rounded-lg">
-                  <h4 className="font-semibold text-primary mb-2">Dades Catalunya 2024:</h4>
+                  <h4 className="font-semibold text-primary mb-2">
+                    Dades Catalunya 2024:
+                  </h4>
                   <ul className="text-sm space-y-1">
                     <li>• Pèrdua mitjana: 42L/habitant/dia</li>
                     <li>• Cost aigua: 2.15€/m³ mitjana</li>
@@ -317,7 +364,8 @@ export default function Index() {
         {/* Footer */}
         <div className="text-center mt-12 text-muted-foreground">
           <p className="text-sm">
-            Desenvolupat per ajudar els municipis catalans a optimitzar l'ús de l'aigua
+            Desenvolupat per ajudar els municipis catalans a optimitzar l'ús de
+            l'aigua
           </p>
         </div>
       </div>

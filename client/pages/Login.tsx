@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple authentication - just navigate to dashboard
-    localStorage.setItem('isAuthenticated', 'true');
-    navigate('/dashboard');
+    localStorage.setItem("isAuthenticated", "true");
+    navigate("/dashboard");
   };
 
   return (
@@ -34,9 +34,12 @@ export default function Login() {
           {/* Login Card */}
           <Card className="border-0 shadow-lg">
             <CardHeader className="pb-4">
-              <h2 className="text-xl font-semibold text-gray-900">Benvingut!</h2>
+              <h2 className="text-xl font-semibold text-gray-900">
+                Benvingut!
+              </h2>
               <p className="text-sm text-gray-600">
-                Introdueix les credencials compartides per l'Administrador de la teva organització.
+                Introdueix les credencials compartides per l'Administrador de la
+                teva organització.
               </p>
             </CardHeader>
             <CardContent>
@@ -61,8 +64,8 @@ export default function Login() {
                     required
                   />
                 </div>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg"
                 >
                   Log in →
@@ -74,7 +77,7 @@ export default function Login() {
           {/* Footer */}
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-500 flex items-center justify-center">
-              Made with 
+              Made with
               <span className="mx-1 text-blue-600">♥</span>
               <span className="font-semibold">Barcelona</span>
             </p>
@@ -87,7 +90,7 @@ export default function Login() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F7e06ad701e804ea095c11784c4fdf9f7?format=webp&width=800')`
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F7e06ad701e804ea095c11784c4fdf9f7?format=webp&width=800')`,
           }}
         >
           {/* Overlay para mantener legibilidad del texto */}
@@ -113,7 +116,6 @@ export default function Login() {
             </CardContent>
           </Card>
         </div>
-
       </div>
     </div>
   );
