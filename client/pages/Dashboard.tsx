@@ -158,15 +158,13 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="p-4">
-          {!sidebarCollapsed && (
-            <p className="text-sm text-gray-600 mt-1">
-              <b>
-                El meu poble
-                <br />
-              </b>
+          <p className="text-sm text-gray-600 mt-1">
+            <b>
+              El meu poble
               <br />
-            </p>
-          )}
+            </b>
+            <br />
+          </p>
           <nav className="space-y-1">
             {sidebarItems.map((item, index) => (
               <button
