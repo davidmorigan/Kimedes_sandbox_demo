@@ -191,11 +191,9 @@ export default function Dashboard() {
 
           {/* Admin Section */}
           <div className="mt-8">
-            {!sidebarCollapsed && (
-              <h3 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Admin
-              </h3>
-            )}
+            <h3 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              Admin
+            </h3>
             <nav className={`${sidebarCollapsed ? 'mt-4' : 'mt-2'} space-y-1`}>
               {adminItems.map((item, index) => (
                 <button
