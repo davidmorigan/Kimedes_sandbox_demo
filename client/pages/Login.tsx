@@ -102,17 +102,17 @@ export default function Login() {
         </div>
 
         {/* Testimonial */}
-        <div className="absolute bottom-32 left-8 right-8">
-          <Card className="bg-white/90 backdrop-blur border-0 shadow-lg">
+        <div className="absolute bottom-32 left-8 right-8 z-20">
+          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">
             <CardContent className="p-4">
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm">
+                <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white text-sm">
                   @
                 </div>
                 <div>
-                  <p className="text-sm text-gray-700 italic">
-                    "Precisión y control en cada gota. Kimedes AlphaLeak detecta 
-                    fugas, ahorra agua y protege la infraestructura con la 
+                  <p className="text-sm text-gray-800 italic font-medium">
+                    "Precisión y control en cada gota. Kimedes AlphaLeak detecta
+                    fugas, ahorra agua y protege la infraestructura con la
                     máxima eficacia. ¡Eureka!"
                   </p>
                 </div>
