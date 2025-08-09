@@ -79,7 +79,7 @@ export default function Login() {
             <p className="text-sm text-gray-500 flex items-center justify-center">
               Made with
               <span className="mx-1 text-blue-600">♥</span>
-              <span className="font-semibold">Barcelona</span>
+              <span className="font-semibold">from Barcelona</span>
             </p>
           </div>
         </div>
@@ -107,9 +107,9 @@ export default function Login() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-800 italic font-medium">
-                    "Precisión y control en cada gota. Kimedes AlphaLeak detecta
-                    fugas, ahorra agua y protege la infraestructura con la
-                    máxima eficacia. ¡Eureka!"
+                    "Precisió i control a cada gota. Kimedes AlphaLeak
+                    detecta fuites, estalvia aigua i protegeix la
+                    infraestructura amb la màxima eficàcia. Eureka!"
                   </p>
                 </div>
               </div>
