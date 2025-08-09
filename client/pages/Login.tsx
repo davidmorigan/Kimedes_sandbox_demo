@@ -43,7 +43,7 @@ export default function Login() {
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
                   <label className="text-sm font-medium text-blue-600 mb-2 block">
-                    Credentials
+                    Credencials
                   </label>
                   <Input
                     type="email"
