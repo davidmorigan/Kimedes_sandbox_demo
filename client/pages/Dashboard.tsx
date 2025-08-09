@@ -236,10 +236,25 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-8">
+      <div className="flex-1 p-4 lg:p-8">
+        {/* Mobile Header with Hamburger */}
+        <div className="lg:hidden flex items-center justify-between mb-6 bg-white p-4 rounded-lg shadow-sm">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+          <div className="flex items-center">
+            <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
+            <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
+          </div>
+          <div className="w-10"></div> {/* Spacer for centering */}
+        </div>
+
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">
+          <h1 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
             {activeSection}
           </h1>
 
