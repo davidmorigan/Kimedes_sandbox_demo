@@ -1,0 +1,10 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cyan circle background -->
+  <circle cx="8" cy="8" r="8" fill="#06b6d4"/>
+  
+  <!-- White letter K optimized for small size -->
+  <g fill="white">
+    <rect x="4" y="3" width="1.5" height="10"/>
+    <polygon points="5.5,7.5 8.5,3 10.5,3 8,7.5 10.5,13 8.5,13 7,9"/>
+  </g>
+</svg>
