@@ -107,9 +107,9 @@ export default function Login() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-800 italic font-medium">
-                    "Precisió i control a cada gota. Kimedes AlphaLeak
-                    detecta fuites, estalvia aigua i protegeix la
-                    infraestructura amb la màxima eficàcia. Eureka!"
+                    "Precisió i control a cada gota. Kimedes AlphaLeak detecta
+                    fuites, estalvia aigua i protegeix la infraestructura amb la
+                    màxima eficàcia. Eureka!"
                   </p>
                 </div>
               </div>
