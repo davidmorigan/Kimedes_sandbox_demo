@@ -26,6 +26,8 @@ import {
 export default function Dashboard() {
   const [activeSection, setActiveSection] = useState('Panell de control');
   const [showModal, setShowModal] = useState(false);
+  const [selectedLeaks, setSelectedLeaks] = useState<number[]>([1, 3, 6]); // Initial selected items
+  const [selectAll, setSelectAll] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
