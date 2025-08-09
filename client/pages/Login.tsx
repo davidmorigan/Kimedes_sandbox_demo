@@ -122,10 +122,10 @@ export default function Login() {
         </div>
 
         {/* Decorative dots */}
-        <div className="absolute top-48 right-24">
+        <div className="absolute top-48 right-24 z-10">
           <div className="grid grid-cols-3 gap-2">
             {[...Array(9)].map((_, i) => (
-              <div key={i} className="w-2 h-2 bg-white rounded-full opacity-60"></div>
+              <div key={i} className="w-2 h-2 bg-cyan-400 rounded-full opacity-80"></div>
             ))}
           </div>
         </div>
