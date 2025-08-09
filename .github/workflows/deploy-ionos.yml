@@ -66,5 +66,9 @@ jobs:
           
     - name: ✅ Deployment Success
       run: |
-        echo "🎉 Kimedes deployed successfully!"
-        echo "🌐 URL: https://demo.kimedes.com"
+        echo "🎉 Kimedes deployed successfully to Ionos!"
+        echo "🌐 Main URL: https://demo.kimedes.com"
+        echo "🔐 Login URL: https://demo.kimedes.com/login"
+        echo "📊 Dashboard URL: https://demo.kimedes.com/dashboard"
+        echo ""
+        echo "⏰ Wait 5-10 minutes for DNS propagation"
