@@ -22,6 +22,7 @@ import {
   MapPin,
   LogOut,
   X,
+  Menu,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -29,6 +30,7 @@ export default function Dashboard() {
   const [showModal, setShowModal] = useState(false);
   const [selectedLeaks, setSelectedLeaks] = useState<number[]>([1, 3, 6]); // Initial selected items
   const [selectAll, setSelectAll] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -128,8 +130,18 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
+      {/* Mobile sidebar overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <div className="w-64 bg-white shadow-sm border-r">
+      <div className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white shadow-sm border-r transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
         {/* Header */}
         <div className="p-6 border-b">
           <div className="flex items-center">
