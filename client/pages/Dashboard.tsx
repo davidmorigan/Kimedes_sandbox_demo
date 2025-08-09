@@ -403,7 +403,15 @@ export default function Dashboard() {
               {/* Main Metrics */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 {metrics.map((metric, index) => (
-                  <Card key={index} className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}>
+                  <Card
+                    key={index}
+                    className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}
+                    onClick={() => {
+                      if (metric.title === 'Total Fuites Actives') {
+                        setActiveSection('Detecció de fuites');
+                      }
+                    }}
+                  >
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-sm font-medium text-gray-700">{metric.title}</h3>
