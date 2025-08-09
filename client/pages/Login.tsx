@@ -93,18 +93,12 @@ export default function Login() {
           {/* Overlay para mantener legibilidad del texto */}
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         </div>
-        {/* Geometric shapes */}
-        <div className="absolute inset-0">
-          {/* Main geometric elements */}
-          <div className="absolute top-20 right-20 w-40 h-40 bg-blue-300 rounded-2xl opacity-60 transform rotate-12"></div>
-          <div className="absolute top-40 right-60 w-32 h-32 bg-white rounded-2xl opacity-40 transform -rotate-6"></div>
-          <div className="absolute bottom-40 right-20 w-48 h-48 bg-blue-700 rounded-2xl opacity-50 transform rotate-45"></div>
-          <div className="absolute bottom-60 right-80 w-24 h-24 bg-cyan-300 rounded-xl opacity-70"></div>
-          
-          {/* Pipe-like elements */}
-          <div className="absolute top-32 right-40 w-6 h-32 bg-white rounded-full opacity-60"></div>
-          <div className="absolute top-60 right-32 w-4 h-24 bg-blue-200 rounded-full opacity-50"></div>
-          <div className="absolute bottom-32 right-60 w-5 h-28 bg-cyan-200 rounded-full opacity-60"></div>
+        {/* Elementos decorativos sutiles */}
+        <div className="absolute inset-0 z-10">
+          {/* Elementos geométricos sutiles */}
+          <div className="absolute top-20 right-20 w-20 h-20 bg-white rounded-2xl opacity-20 transform rotate-12"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-cyan-400 rounded-2xl opacity-30 transform rotate-45"></div>
+          <div className="absolute bottom-60 right-80 w-16 h-16 bg-white rounded-xl opacity-25"></div>
         </div>
 
         {/* Testimonial */}
