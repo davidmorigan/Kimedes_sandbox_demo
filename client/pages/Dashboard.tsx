@@ -236,11 +236,10 @@ export default function Dashboard() {
           <div className="mt-8 pt-4 border-t">
             <button
               onClick={handleLogout}
-              className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-3' : 'px-3'} py-2 text-sm text-red-600 rounded-lg hover:bg-red-50 transition-colors`}
-              title={sidebarCollapsed ? "Logout" : undefined}
+              className="w-full flex items-center px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50 transition-colors"
             >
-              <LogOut className={`w-4 h-4 ${sidebarCollapsed ? '' : 'mr-3'}`} />
-              {!sidebarCollapsed && "Logout"}
+              <LogOut className="w-4 h-4 mr-3" />
+              Logout
             </button>
           </div>
         </div>
