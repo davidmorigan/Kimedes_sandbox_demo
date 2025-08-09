@@ -297,24 +297,10 @@ export default function Dashboard() {
         {/* User Avatar */}
         <div className="fixed bottom-8 left-8">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
-              <img 
-                src="/placeholder.svg" 
-                alt="David Mora"
-                className="w-full h-full object-cover"
-              />
-            </div>
             <div>
-              <p className="text-sm font-medium">David Mora</p>
-              <p className="text-xs text-gray-500">@davidmora.ca</p>
             </div>
           </div>
           <div className="mt-2 text-center">
-            <p className="text-xs text-gray-500 flex items-center justify-center">
-              Made with 
-              <span className="mx-1 text-blue-600">♥</span>
-              <span className="font-semibold">Visily</span>
-            </p>
           </div>
         </div>
       </div>
