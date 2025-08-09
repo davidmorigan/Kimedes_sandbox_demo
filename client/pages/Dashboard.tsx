@@ -23,8 +23,6 @@ import {
   LogOut,
   X,
   Menu,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 export default function Dashboard() {
