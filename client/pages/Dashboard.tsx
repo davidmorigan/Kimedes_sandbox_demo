@@ -357,7 +357,19 @@ export default function Dashboard() {
                       ].map((leak, index) => (
                         <tr key={index} className="hover:bg-gray-50">
                           <td className="px-4 py-3">
-                            <input type="checkbox" checked={leak.selected || false} className="rounded" />
+                            <input
+                              type="checkbox"
+                              checked={selectedLeaks.includes(index)}
+                              className="rounded"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setSelectedLeaks([...selectedLeaks, index]);
+                                } else {
+                                  setSelectedLeaks(selectedLeaks.filter(id => id !== index));
+                                  setSelectAll(false);
+                                }
+                              }}
+                            />
                           </td>
                           <td className="px-4 py-3 text-sm text-gray-900">{leak.id}</td>
                           <td className="px-4 py-3 text-sm text-gray-900">{leak.ratio}</td>
