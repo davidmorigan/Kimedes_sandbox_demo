@@ -87,7 +87,7 @@ export default function Login() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fc87694fa85b046ee9c3e879d8ddd059a?format=webp&width=800')`
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F7e06ad701e804ea095c11784c4fdf9f7?format=webp&width=800')`
           }}
         >
           {/* Overlay para mantener legibilidad del texto */}
