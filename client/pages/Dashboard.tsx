@@ -122,7 +122,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <div className="w-64 bg-white shadow-sm border-r">
+      <div className="w-80 bg-white shadow-sm border-r">
         {/* Header */}
         <div className="p-6 border-b">
           <div className="flex items-center">
