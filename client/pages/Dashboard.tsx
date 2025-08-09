@@ -140,7 +140,13 @@ export default function Dashboard() {
             {sidebarItems.map((item, index) => (
               <button
                 key={index}
-                onClick={() => setActiveSection(item.label)}
+                onClick={() => {
+                  if (item.label === 'Analítica') {
+                    setShowModal(true);
+                  } else {
+                    setActiveSection(item.label);
+                  }
+                }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
                   item.active || activeSection === item.label
                     ? 'bg-gray-900 text-white' 
