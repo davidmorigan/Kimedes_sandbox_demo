@@ -312,6 +312,49 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl max-w-md w-full mx-auto shadow-2xl animate-in fade-in duration-200">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-orange-100 rounded-full">
+                  <AlertTriangle className="w-5 h-5 text-orange-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  OOPS! Encara no ho tenim!
+                </h3>
+              </div>
+              <button
+                onClick={() => setShowModal(false)}
+                className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X className="w-5 h-5 text-gray-400" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              <p className="text-gray-600 leading-relaxed">
+                Gràcies pel teu interès, però aquesta funcionalitat encara no està activa.
+                Estigues atent als pròxims llançaments del producte.
+              </p>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 pb-6">
+              <Button
+                onClick={() => setShowModal(false)}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                Tancar
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
