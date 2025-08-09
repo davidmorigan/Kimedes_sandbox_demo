@@ -385,7 +385,7 @@ export default function Dashboard() {
               </div>
 
               {/* Leak Detection Metrics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
                 <Card className="bg-pink-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
