@@ -138,7 +138,6 @@ const LeakMap = () => {
           <Marker
             key={sensor.id}
             position={[sensor.lat, sensor.lng]}
-            icon={sensorIcon}
           >
             <Popup>
               <div className="p-2">
