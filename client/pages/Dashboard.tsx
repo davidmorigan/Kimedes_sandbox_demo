@@ -23,6 +23,7 @@ import {
   LogOut,
   X,
   Menu,
+  ShieldAlert,
 } from "lucide-react";
 
 export default function Dashboard() {
