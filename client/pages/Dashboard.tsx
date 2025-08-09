@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 
 export default function Dashboard() {
-  const [activeSection, setActiveSection] = useState('Panel de control');
+  const [activeSection, setActiveSection] = useState('Panell de control');
   const navigate = useNavigate();
 
   const handleLogout = () => {
