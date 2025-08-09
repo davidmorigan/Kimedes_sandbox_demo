@@ -56,7 +56,7 @@ export default function Dashboard() {
     { icon: Users, label: "Gestió de Personal" },
     { icon: Radio, label: "Control de Sensors" },
     { icon: Bell, label: "Notificacions" },
-    { icon: BarChart3, label: "Registre d'Activitats" },
+    { icon: ScrollText, label: "Registre d'Activitats" },
     { icon: Settings, label: "Configuració" },
   ];
 
