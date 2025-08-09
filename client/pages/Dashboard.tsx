@@ -318,7 +318,19 @@ export default function Dashboard() {
                     <thead className="bg-gray-50 border-b">
                       <tr>
                         <th className="px-4 py-3 text-left">
-                          <input type="checkbox" className="rounded" />
+                          <input
+                            type="checkbox"
+                            className="rounded"
+                            checked={selectAll}
+                            onChange={(e) => {
+                              setSelectAll(e.target.checked);
+                              if (e.target.checked) {
+                                setSelectedLeaks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                              } else {
+                                setSelectedLeaks([]);
+                              }
+                            }}
+                          />
                         </th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Identificador Fuita</th>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-700">Ràtio Fuita (L/s)</th>
