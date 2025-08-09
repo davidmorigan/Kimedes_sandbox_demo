@@ -219,7 +219,7 @@ export default function Dashboard() {
                 Admin
               </h3>
             )}
-            <nav className="mt-2 space-y-1">
+            <nav className={`${sidebarCollapsed ? 'mt-4' : 'mt-2'} space-y-1`}>
               {adminItems.map((item, index) => (
                 <button
                   key={index}
@@ -243,14 +243,18 @@ export default function Dashboard() {
                     }
                     setSidebarOpen(false); // Close mobile sidebar after selection
                   }}
-                  className="w-full flex items-center px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+                  className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-3' : 'px-3'} py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-colors`}
+                  title={sidebarCollapsed ? item.label : undefined}
                 >
-                  <item.icon className="w-4 h-4 mr-3" />
-                  {item.label}
-                  {item.hasNotification && (
+                  <item.icon className={`w-4 h-4 ${sidebarCollapsed ? '' : 'mr-3'}`} />
+                  {!sidebarCollapsed && item.label}
+                  {!sidebarCollapsed && item.hasNotification && (
                     <Badge className="ml-auto bg-red-500 text-white text-xs px-1.5 py-0.5">
                       1
                     </Badge>
+                  )}
+                  {sidebarCollapsed && item.hasNotification && (
+                    <div className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></div>
                   )}
                 </button>
               ))}
