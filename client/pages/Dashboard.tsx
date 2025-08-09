@@ -52,7 +52,7 @@ export default function Dashboard() {
     { icon: ShieldAlert, label: "Informes de Freu" },
     { icon: Bell, label: "Alertes", hasNotification: true },
     { icon: Users, label: "Gestió de Personal" },
-    { icon: Settings, label: "Control de Sensors" },
+    { icon: Radio, label: "Control de Sensors" },
     { icon: Bell, label: "Notificacions" },
     { icon: BarChart3, label: "Registre d'Activitats" },
     { icon: Settings, label: "Configuració" },
