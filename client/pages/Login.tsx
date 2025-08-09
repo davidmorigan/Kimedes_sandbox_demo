@@ -17,9 +17,9 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left side - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-gray-50">
+      <div className="flex-1 flex items-center justify-center p-4 lg:p-8 bg-gray-50">
         <div className="w-full max-w-md">
           {/* Logo and Header */}
           <div className="mb-8">
@@ -86,7 +86,7 @@ export default function Login() {
       </div>
 
       {/* Right side - Illustration */}
-      <div className="flex-1 relative overflow-hidden">
+      <div className="hidden lg:flex lg:flex-1 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -98,7 +98,7 @@ export default function Login() {
         </div>
 
         {/* Testimonial */}
-        <div className="absolute bottom-32 left-8 right-8 z-20">
+        <div className="absolute bottom-8 lg:bottom-32 left-4 lg:left-8 right-4 lg:right-8 z-20">
           <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">
             <CardContent className="p-4">
               <div className="flex items-start space-x-3">
