@@ -170,11 +170,12 @@ export default function Dashboard() {
               <button
                 key={index}
                 onClick={() => {
-                  if (item.label === "Analítica") {
+                  if (item.label === "Anal��tica") {
                     setShowModal(true);
                   } else {
                     setActiveSection(item.label);
                   }
+                  setSidebarOpen(false); // Close mobile sidebar after selection
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
                   activeSection === item.label
