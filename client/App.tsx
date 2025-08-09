@@ -40,4 +40,12 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Ensure root is only created once to avoid warnings during HMR
+const rootElement = document.getElementById("root")!;
+if (!(rootElement as any)._reactRoot) {
+  const root = createRoot(rootElement);
+  (rootElement as any)._reactRoot = root;
+  root.render(<App />);
+} else {
+  (rootElement as any)._reactRoot.render(<App />);
+}
