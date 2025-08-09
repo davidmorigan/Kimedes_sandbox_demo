@@ -147,31 +147,14 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
-              {!sidebarCollapsed && (
-                <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
-              )}
+              <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
             </div>
-            <div className="flex items-center space-x-2">
-              {/* Desktop collapse toggle */}
-              <button
-                onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                className="hidden lg:flex p-2 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors"
-                title={sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-              >
-                {sidebarCollapsed ? (
-                  <ChevronRight className="w-5 h-5" />
-                ) : (
-                  <ChevronLeft className="w-5 h-5" />
-                )}
-              </button>
-              {/* Mobile close button */}
-              <button
-                onClick={() => setSidebarOpen(false)}
-                className="lg:hidden p-2 rounded-lg text-gray-400 hover:bg-gray-100"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            <button
+              onClick={() => setSidebarOpen(false)}
+              className="lg:hidden p-2 rounded-lg text-gray-400 hover:bg-gray-100"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
         </div>
         <div className="p-4">
