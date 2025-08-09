@@ -83,7 +83,16 @@ export default function Login() {
       </div>
 
       {/* Right side - Illustration */}
-      <div className="flex-1 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fc87694fa85b046ee9c3e879d8ddd059a?format=webp&width=800')`
+          }}
+        >
+          {/* Overlay para mantener legibilidad del texto */}
+          <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+        </div>
         {/* Geometric shapes */}
         <div className="absolute inset-0">
           {/* Main geometric elements */}
