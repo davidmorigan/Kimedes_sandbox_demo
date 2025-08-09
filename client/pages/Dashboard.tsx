@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Search, 
+import {
+  Search,
   Calendar,
   TrendingUp,
   TrendingDown,
@@ -19,11 +19,13 @@ import {
   Settings,
   BarChart3,
   MapPin,
-  LogOut
+  LogOut,
+  X
 } from 'lucide-react';
 
 export default function Dashboard() {
   const [activeSection, setActiveSection] = useState('Panell de control');
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
