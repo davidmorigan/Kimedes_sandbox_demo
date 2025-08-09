@@ -34,9 +34,9 @@ export default function Login() {
           {/* Login Card */}
           <Card className="border-0 shadow-lg">
             <CardHeader className="pb-4">
-              <h2 className="text-xl font-semibold text-gray-900">Get started now</h2>
+              <h2 className="text-xl font-semibold text-gray-900">Benvingut!</h2>
               <p className="text-sm text-gray-600">
-                Introduce the credentials shared by the Admin of your organization.
+                Introdueix les credencials compartides per l'Administrador de la teva organització.
               </p>
             </CardHeader>
             <CardContent>
