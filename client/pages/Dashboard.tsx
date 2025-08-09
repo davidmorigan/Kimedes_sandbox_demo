@@ -163,7 +163,19 @@ export default function Dashboard() {
                 <button
                   key={index}
                   onClick={() => {
-                    if (item.label === 'Informes de Freu') {
+                    const modalOptions = [
+                      'Analítica',
+                      'Facturació',
+                      'Informes de Freu',
+                      'Alertes',
+                      'Gestió de Personal',
+                      'Control de Sensors',
+                      'Notificacions',
+                      'Registre d\'Activitats',
+                      'Configuració'
+                    ];
+
+                    if (modalOptions.includes(item.label)) {
                       setShowModal(true);
                     } else {
                       setActiveSection(item.label);
