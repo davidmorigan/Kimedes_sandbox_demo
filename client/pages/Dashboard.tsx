@@ -64,7 +64,7 @@ export default function Dashboard() {
     {
       title: 'CO2 Emès',
       value: '120 T',
-      change: '5.39%',
+      change: '7.89%',
       trend: 'down',
       color: 'bg-teal-100',
       textColor: 'text-teal-900',
@@ -89,21 +89,21 @@ export default function Dashboard() {
     {
       title: 'Cost econòmic per fuites',
       value: '$72K',
-      change: '5.39%',
+      change: '9.67%',
       color: 'bg-pink-100',
       iconBg: 'bg-pink-100'
     },
     {
       title: 'Aigua perduda',
       value: '200 M3',
-      change: '5.39%',
+      change: '7.36%',
       color: 'bg-teal-100',
       iconBg: 'bg-teal-100'
     },
     {
       title: 'Aigua demandada',
       value: '800 M3',
-      change: '5.39%',
+      change: '4.53%',
       color: 'bg-orange-100',
       iconBg: 'bg-orange-100'
     }
