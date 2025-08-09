@@ -40,6 +40,10 @@ jobs:
           npm ci
           npm run build:client
 
+      - name: Copy .htaccess for SPA routing
+        run: |
+          cp .htaccess dist/spa/.htaccess
+
 # Please do not touch the following action
       - name: Store deployment content
         uses: ionos-deploy-now/artifact-action@v1
