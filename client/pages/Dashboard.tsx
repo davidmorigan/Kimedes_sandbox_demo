@@ -148,8 +148,8 @@ export default function Dashboard() {
                   }
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
-                  item.active || activeSection === item.label
-                    ? 'bg-gray-900 text-white' 
+                  activeSection === item.label
+                    ? 'bg-gray-900 text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
