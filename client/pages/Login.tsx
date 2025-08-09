@@ -93,13 +93,6 @@ export default function Login() {
           {/* Overlay para mantener legibilidad del texto */}
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         </div>
-        {/* Elementos decorativos sutiles */}
-        <div className="absolute inset-0 z-10">
-          {/* Elementos geométricos sutiles */}
-          <div className="absolute top-20 right-20 w-20 h-20 bg-white rounded-2xl opacity-20 transform rotate-12"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-cyan-400 rounded-2xl opacity-30 transform rotate-45"></div>
-          <div className="absolute bottom-60 right-80 w-16 h-16 bg-white rounded-xl opacity-25"></div>
-        </div>
 
         {/* Testimonial */}
         <div className="absolute bottom-32 left-8 right-8 z-20">
