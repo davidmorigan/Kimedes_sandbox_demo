@@ -199,14 +199,15 @@ export default function Dashboard() {
                   }
                   setSidebarOpen(false); // Close mobile sidebar after selection
                 }}
-                className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
+                className={`w-full flex items-center ${sidebarCollapsed ? 'justify-center px-3' : 'px-3'} py-2 text-sm rounded-lg transition-colors ${
                   activeSection === item.label
                     ? "bg-gray-900 text-white"
                     : "text-gray-700 hover:bg-gray-100"
                 }`}
+                title={sidebarCollapsed ? item.label : undefined}
               >
-                <item.icon className="w-4 h-4 mr-3" />
-                {item.label}
+                <item.icon className={`w-4 h-4 ${sidebarCollapsed ? '' : 'mr-3'}`} />
+                {!sidebarCollapsed && item.label}
               </button>
             ))}
           </nav>
