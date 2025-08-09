@@ -306,7 +306,7 @@ export default function Index() {
                   <ul className="text-sm space-y-1">
                     <li>• Pèrdua mitjana: 42L/habitant/dia</li>
                     <li>• Cost aigua: 2.15€/m³ mitjana</li>
-                    <li>• Objectiu UE: <20% pèrdues per 2030</li>
+                    <li>• Objectiu UE: &lt;20% pèrdues per 2030</li>
                   </ul>
                 </div>
               </CardContent>
