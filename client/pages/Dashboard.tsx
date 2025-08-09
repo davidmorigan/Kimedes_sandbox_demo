@@ -125,11 +125,15 @@ export default function Dashboard() {
             <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
             <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
           </div>
-          <p className="text-sm text-gray-600 mt-1">El meu poble</p>
         </div>
-
-        {/* Navigation */}
         <div className="p-4">
+          <p className="text-sm text-gray-600 mt-1">
+            <b>
+              El meu poble
+              <br />
+            </b>
+            <br />
+          </p>
           <nav className="space-y-1">
             {sidebarItems.map((item, index) => (
               <button
