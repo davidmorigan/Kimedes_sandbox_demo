@@ -1,0 +1,43 @@
+name: Deploy to Ionos
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build application
+      run: npm run build
+      
+    - name: Deploy to Ionos via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.IONOS_FTP_SERVER }}
+        username: ${{ secrets.IONOS_FTP_USERNAME }}
+        password: ${{ secrets.IONOS_FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /demo.kimedes.com/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.env
+          **/src/**
+          **/.github/**
