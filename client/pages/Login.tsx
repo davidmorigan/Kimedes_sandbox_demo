@@ -76,7 +76,7 @@ export default function Login() {
             <p className="text-sm text-gray-500 flex items-center justify-center">
               Made with 
               <span className="mx-1 text-blue-600">♥</span>
-              <span className="font-semibold">Visily</span>
+              <span className="font-semibold">Barcelona</span>
             </p>
           </div>
         </div>
