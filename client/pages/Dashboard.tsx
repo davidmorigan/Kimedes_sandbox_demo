@@ -287,7 +287,7 @@ export default function Dashboard() {
                   key={index}
                   onClick={() => {
                     const modalOptions = [
-                      "Analítica",
+                      "Informes i Analítica",
                       "Facturació",
                       "Informes de Freu",
                       "Alertes",
