@@ -27,6 +27,8 @@ import {
   Radio,
   Home,
   ScrollText,
+  Sun,
+  Moon,
 } from "lucide-react";
 
 export default function Dashboard() {
