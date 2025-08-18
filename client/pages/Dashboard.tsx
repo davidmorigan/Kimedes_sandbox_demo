@@ -309,7 +309,7 @@ export default function Dashboard() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+          <h1 className={`text-xl lg:text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
             {activeSection}
           </h1>
 
