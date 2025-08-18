@@ -801,9 +801,20 @@ export default function Dashboard() {
                           Sensor de pressió #A-2045 connectat a la xarxa
                         </p>
                       </div>
-                      <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                        fa 2h
-                      </span>
+                      <div className="flex items-center space-x-2">
+                        <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                          fa 2h
+                        </span>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => handleNotificationDetail('device-A2045', 'new-device')}
+                          className={`ml-2 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-700' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+                        >
+                          <Eye className="w-4 h-4 mr-1" />
+                          Veure detall
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
