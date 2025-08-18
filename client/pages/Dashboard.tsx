@@ -78,6 +78,13 @@ export default function Dashboard() {
     // TODO: Implementar navegació als detalls de la notificació
   };
 
+  const handleConfigurationSection = (section: string) => {
+    // En el futur aquesta funció navegarà a la secció específica de configuració
+    console.log(`Navegant a configuració: ${section}`);
+    // TODO: Implementar navegació a la secció específica
+    // Exemple: navigate(`/configuracio/${section.toLowerCase().replace(/\s+/g, '-')}`);
+  };
+
   const sidebarItems = [
     { icon: Home, label: "Panell de control" },
     { icon: MapPin, label: "Localització de Fuites" },
