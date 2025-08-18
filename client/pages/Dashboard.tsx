@@ -36,6 +36,7 @@ import {
   Plus,
   ExternalLink,
   Clock,
+  Eye,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -661,7 +662,7 @@ export default function Dashboard() {
                           id: "Leakage #13",
                           ratio: "20 L/s",
                           difficulty: "Mitja",
-                          value: "���8,535",
+                          value: "����8,535",
                           assignee: "Toni",
                           date: "25/03/2025",
                           status: "Arreglada",
