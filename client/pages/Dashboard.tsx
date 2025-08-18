@@ -144,7 +144,7 @@ export default function Dashboard() {
       action: "Revisar",
     },
     {
-      text: "Tens 1 treballador a qui pots assignar més feina.",
+      text: "Tens 1 treballador a qui pots assignar m��s feina.",
       action: "Revisar",
     },
   ];
@@ -281,10 +281,13 @@ export default function Dashboard() {
           >
             <Menu className="w-6 h-6" />
           </button>
-          <div className="flex items-center">
+          <button
+            onClick={handleKimedesClick}
+            className="flex items-center hover:opacity-80 transition-opacity"
+          >
             <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
             <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
-          </div>
+          </button>
           <div className="w-10"></div> {/* Spacer for centering */}
         </div>
 
