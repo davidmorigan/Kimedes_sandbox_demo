@@ -68,7 +68,7 @@ export default function Dashboard() {
   };
 
   const handleKimedesClick = () => {
-    setActiveSection("Panell de control");
+    setActiveSection("Panell de Control");
     setSidebarOpen(false); // Close mobile sidebar if open
   };
 
@@ -847,7 +847,7 @@ export default function Dashboard() {
                         <p
                           className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
                         >
-                          Sensor de pressió #A-2045 connectat a la xarxa
+                          Sensor de pressi�� #A-2045 connectat a la xarxa
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
