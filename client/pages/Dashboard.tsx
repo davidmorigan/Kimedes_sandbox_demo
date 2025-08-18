@@ -61,9 +61,9 @@ export default function Dashboard() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
     if (!isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   };
 
@@ -177,7 +177,9 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className={`min-h-screen flex ${isDarkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+    <div
+      className={`min-h-screen flex ${isDarkMode ? "dark bg-gray-900" : "bg-gray-50"}`}
+    >
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
@@ -188,26 +190,34 @@ export default function Dashboard() {
 
       {/* Sidebar */}
       <div
-        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm border-r transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 ${isDarkMode ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"} shadow-sm border-r transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className={`p-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+        <div
+          className={`p-6 border-b ${isDarkMode ? "border-gray-700" : "border-gray-200"}`}
+        >
           <div className="flex items-center justify-between">
             <button
               onClick={handleKimedesClick}
               className="flex items-center hover:opacity-80 transition-opacity"
             >
               <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
-              <h1 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Kimedes</h1>
+              <h1
+                className={`text-xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+              >
+                Kimedes
+              </h1>
             </button>
             <div className="flex items-center space-x-2">
               {/* Dark mode toggle */}
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-400 hover:bg-gray-100'}`}
-                title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+                className={`p-2 rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-400 hover:bg-gray-100"}`}
+                title={
+                  isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                }
               >
                 {isDarkMode ? (
                   <Sun className="w-5 h-5" />
@@ -219,7 +229,7 @@ export default function Dashboard() {
               {/* Mobile close button */}
               <button
                 onClick={() => setSidebarOpen(false)}
-                className={`lg:hidden p-2 rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-400 hover:bg-gray-100'}`}
+                className={`lg:hidden p-2 rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-400 hover:bg-gray-100"}`}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -227,7 +237,9 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="p-4">
-          <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p
+            className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+          >
             <b>
               El meu poble
               <br />
@@ -248,8 +260,12 @@ export default function Dashboard() {
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
                   activeSection === item.label
-                    ? (isDarkMode ? "bg-cyan-600 text-white" : "bg-gray-900 text-white")
-                    : (isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100")
+                    ? isDarkMode
+                      ? "bg-cyan-600 text-white"
+                      : "bg-gray-900 text-white"
+                    : isDarkMode
+                      ? "text-gray-300 hover:bg-gray-700"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`}
               >
                 <item.icon className="w-4 h-4 mr-3" />
@@ -260,7 +276,9 @@ export default function Dashboard() {
 
           {/* Admin Section */}
           <div className="mt-8">
-            <h3 className={`px-3 text-xs font-semibold uppercase tracking-wider ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+            <h3
+              className={`px-3 text-xs font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+            >
               Admin
             </h3>
             <nav className="mt-2 space-y-1">
@@ -286,7 +304,7 @@ export default function Dashboard() {
                     }
                     setSidebarOpen(false); // Close mobile sidebar after selection
                   }}
-                  className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
+                  className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100"}`}
                 >
                   <item.icon className="w-4 h-4 mr-3" />
                   {item.label}
@@ -301,10 +319,12 @@ export default function Dashboard() {
           </div>
 
           {/* Logout */}
-          <div className={`mt-8 pt-4 border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+          <div
+            className={`mt-8 pt-4 border-t ${isDarkMode ? "border-gray-700" : "border-gray-200"}`}
+          >
             <button
               onClick={handleLogout}
-              className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? 'text-red-400 hover:bg-gray-700' : 'text-red-600 hover:bg-red-50'}`}
+              className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? "text-red-400 hover:bg-gray-700" : "text-red-600 hover:bg-red-50"}`}
             >
               <LogOut className="w-4 h-4 mr-3" />
               Logout
@@ -316,10 +336,12 @@ export default function Dashboard() {
       {/* Main Content */}
       <div className="flex-1 lg:ml-0 p-4 lg:p-8">
         {/* Mobile Header with Hamburger */}
-        <div className={`lg:hidden flex items-center justify-between mb-6 p-4 rounded-lg shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+        <div
+          className={`lg:hidden flex items-center justify-between mb-6 p-4 rounded-lg shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+        >
           <button
             onClick={() => setSidebarOpen(true)}
-            className={`p-2 rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-600 hover:bg-gray-100'}`}
+            className={`p-2 rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-600 hover:bg-gray-100"}`}
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -328,14 +350,20 @@ export default function Dashboard() {
             className="flex items-center hover:opacity-80 transition-opacity"
           >
             <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
-            <h1 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Kimedes</h1>
+            <h1
+              className={`text-xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+            >
+              Kimedes
+            </h1>
           </button>
           <div className="w-10"></div> {/* Spacer for centering */}
         </div>
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className={`text-xl lg:text-2xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h1
+            className={`text-xl lg:text-2xl font-bold mb-6 ${isDarkMode ? "text-white" : "text-gray-900"}`}
+          >
             {activeSection}
           </h1>
 
@@ -344,7 +372,7 @@ export default function Dashboard() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Que necessites saber?"
-              className={`pl-10 ${isDarkMode ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' : 'bg-white'}`}
+              className={`pl-10 ${isDarkMode ? "bg-gray-800 border-gray-600 text-white placeholder-gray-400" : "bg-white"}`}
             />
           </div>
         </div>
@@ -787,10 +815,14 @@ export default function Dashboard() {
             {/* Notificacions Internes */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h2
+                  className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                >
                   Notificacions Internes
                 </h2>
-                <div className={`flex items-center space-x-2 text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <div
+                  className={`flex items-center space-x-2 text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                >
                   <span>Avui</span>
                   <Clock className="w-4 h-4" />
                 </div>
@@ -798,29 +830,42 @@ export default function Dashboard() {
 
               <div className="space-y-4">
                 {/* Nou dispositiu afegit */}
-                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Card
+                  className={`border-0 shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-4">
                     <div className="flex items-center space-x-3">
                       <div className="p-2 bg-green-100 rounded-lg">
                         <Plus className="w-5 h-5 text-green-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Nou dispositiu afegit
                         </h3>
-                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        <p
+                          className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                        >
                           Sensor de pressió #A-2045 connectat a la xarxa
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        <span
+                          className={`text-xs ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                        >
                           fa 2h
                         </span>
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => handleNotificationDetail('device-A2045', 'new-device')}
-                          className={`ml-2 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-700' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+                          onClick={() =>
+                            handleNotificationDetail(
+                              "device-A2045",
+                              "new-device",
+                            )
+                          }
+                          className={`ml-2 ${isDarkMode ? "border-gray-600 text-gray-300 hover:bg-gray-700" : "border-gray-300 text-gray-600 hover:bg-gray-50"}`}
                         >
                           <Eye className="w-4 h-4 mr-1" />
                           Veure detall
@@ -831,29 +876,42 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Tasques pendents */}
-                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Card
+                  className={`border-0 shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-4">
                     <div className="flex items-center space-x-3">
                       <div className="p-2 bg-orange-100 rounded-lg">
                         <AlertTriangle className="w-5 h-5 text-orange-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           3 tasques pendents de resoldre
                         </h3>
-                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        <p
+                          className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                        >
                           Reparacions urgents requereixen atenció
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        <span
+                          className={`text-xs ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                        >
                           fa 4h
                         </span>
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => handleNotificationDetail('tasks-pending-3', 'pending-tasks')}
-                          className={`ml-2 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-700' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+                          onClick={() =>
+                            handleNotificationDetail(
+                              "tasks-pending-3",
+                              "pending-tasks",
+                            )
+                          }
+                          className={`ml-2 ${isDarkMode ? "border-gray-600 text-gray-300 hover:bg-gray-700" : "border-gray-300 text-gray-600 hover:bg-gray-50"}`}
                         >
                           <Eye className="w-4 h-4 mr-1" />
                           Veure detall
@@ -864,29 +922,42 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Fallo integració */}
-                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Card
+                  className={`border-0 shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-4">
                     <div className="flex items-center space-x-3">
                       <div className="p-2 bg-red-100 rounded-lg">
                         <ExternalLink className="w-5 h-5 text-red-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Fallo amb dades integració
                         </h3>
-                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        <p
+                          className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                        >
                           Error de sincronització amb API externa
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        <span
+                          className={`text-xs ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                        >
                           fa 6h
                         </span>
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => handleNotificationDetail('integration-error-001', 'integration-failure')}
-                          className={`ml-2 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-700' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+                          onClick={() =>
+                            handleNotificationDetail(
+                              "integration-error-001",
+                              "integration-failure",
+                            )
+                          }
+                          className={`ml-2 ${isDarkMode ? "border-gray-600 text-gray-300 hover:bg-gray-700" : "border-gray-300 text-gray-600 hover:bg-gray-50"}`}
                         >
                           <Eye className="w-4 h-4 mr-1" />
                           Veure detall
@@ -897,29 +968,42 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Export realitzat */}
-                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Card
+                  className={`border-0 shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-4">
                     <div className="flex items-center space-x-3">
                       <div className="p-2 bg-green-100 rounded-lg">
                         <CheckCircle className="w-5 h-5 text-green-600" />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Export realitzat amb èxit
                         </h3>
-                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        <p
+                          className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                        >
                           Informe mensual generat i enviat
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        <span
+                          className={`text-xs ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                        >
                           ahir
                         </span>
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => handleNotificationDetail('export-monthly-2024-12', 'export-success')}
-                          className={`ml-2 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-700' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+                          onClick={() =>
+                            handleNotificationDetail(
+                              "export-monthly-2024-12",
+                              "export-success",
+                            )
+                          }
+                          className={`ml-2 ${isDarkMode ? "border-gray-600 text-gray-300 hover:bg-gray-700" : "border-gray-300 text-gray-600 hover:bg-gray-50"}`}
                         >
                           <Eye className="w-4 h-4 mr-1" />
                           Veure detall
@@ -934,10 +1018,14 @@ export default function Dashboard() {
             {/* Notificacions Externes */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h2
+                  className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                >
                   Notificacions Externes Enviades
                 </h2>
-                <div className={`flex items-center space-x-2 text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <div
+                  className={`flex items-center space-x-2 text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                >
                   <span>Últimes 24h</span>
                   <Clock className="w-4 h-4" />
                 </div>
@@ -945,10 +1033,14 @@ export default function Dashboard() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* WhatsApp Stats */}
-                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Card
+                  className={`border-0 shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className={`text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      <h3
+                        className={`text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
+                      >
                         WhatsApp Enviats
                       </h3>
                       <div className="p-2 rounded-lg bg-green-100">
@@ -956,14 +1048,20 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <p className={`text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <p
+                        className={`text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                      >
                         6
                       </p>
                       <div className="flex items-center text-sm">
                         <CheckCircle className="w-4 h-4 text-green-600 mr-1" />
-                        <span className="text-green-600">Tots enviats amb èxit</span>
+                        <span className="text-green-600">
+                          Tots enviats amb èxit
+                        </span>
                       </div>
-                      <div className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <div
+                        className={`text-xs ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                      >
                         Alertes de fuites crítiques
                       </div>
                     </div>
@@ -971,10 +1069,14 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Email Stats */}
-                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <Card
+                  className={`border-0 shadow-sm ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className={`text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      <h3
+                        className={`text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
+                      >
                         Emails Enviats
                       </h3>
                       <div className="p-2 rounded-lg bg-blue-100">
@@ -982,14 +1084,20 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <p className={`text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <p
+                        className={`text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                      >
                         10
                       </p>
                       <div className="flex items-center text-sm">
                         <CheckCircle className="w-4 h-4 text-green-600 mr-1" />
-                        <span className="text-green-600">Tots enviats amb èxit</span>
+                        <span className="text-green-600">
+                          Tots enviats amb èxit
+                        </span>
                       </div>
-                      <div className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <div
+                        className={`text-xs ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
+                      >
                         Informes setmanals i alertes
                       </div>
                     </div>
@@ -1002,18 +1110,25 @@ export default function Dashboard() {
           /* Configuration Content */
           <div>
             <div className="mb-8">
-              <h2 className={`text-lg font-semibold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h2
+                className={`text-lg font-semibold mb-6 ${isDarkMode ? "text-white" : "text-gray-900"}`}
+              >
                 Configuració del Sistema
               </h2>
-              <p className={`text-sm mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Gestiona tots els aspectes de la configuració de Kimedes des d'aquí.
+              <p
+                className={`text-sm mb-8 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+              >
+                Gestiona tots els aspectes de la configuració de Kimedes des
+                d'aquí.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Configurar Usuari */}
                 <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
-                  onClick={() => handleConfigurationSection('Configurar Usuari')}
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() =>
+                    handleConfigurationSection("Configurar Usuari")
+                  }
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1021,21 +1136,26 @@ export default function Dashboard() {
                         <User className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Configurar Usuari
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Gestiona el perfil d'usuari, preferències personals i configuració del compte.
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Gestiona el perfil d'usuari, preferències personals i
+                      configuració del compte.
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Configurar roles i permisos */}
                 <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
-                  onClick={() => handleConfigurationSection('Roles i Permisos')}
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Roles i Permisos")}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1043,21 +1163,26 @@ export default function Dashboard() {
                         <Shield className="w-6 h-6 text-purple-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Roles i Permisos
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Defineix roles d'usuari, permisos d'accés i nivells d'autorització del sistema.
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Defineix roles d'usuari, permisos d'accés i nivells
+                      d'autorització del sistema.
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Automatitzacions */}
                 <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
-                  onClick={() => handleConfigurationSection('Automatitzacions')}
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Automatitzacions")}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1065,21 +1190,28 @@ export default function Dashboard() {
                         <Zap className="w-6 h-6 text-yellow-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Automatitzacions
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Configura processos automàtics, workflows i accions programades del sistema.
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Configura processos automàtics, workflows i accions
+                      programades del sistema.
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Configurar alertes */}
                 <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
-                  onClick={() => handleConfigurationSection('Configurar Alertes')}
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() =>
+                    handleConfigurationSection("Configurar Alertes")
+                  }
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1087,21 +1219,26 @@ export default function Dashboard() {
                         <Bell className="w-6 h-6 text-red-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Configurar Alertes
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Estableix paràmetres d'alerta, umbral de notificacions i canals de comunicació.
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Estableix paràmetres d'alerta, umbral de notificacions i
+                      canals de comunicació.
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Documentació API */}
                 <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
-                  onClick={() => handleConfigurationSection('Documentació API')}
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Documentació API")}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1109,21 +1246,26 @@ export default function Dashboard() {
                         <Book className="w-6 h-6 text-green-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Documentació API
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Accedeix a la documentació completa de l'API i guies d'integració.
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Accedeix a la documentació completa de l'API i guies
+                      d'integració.
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Layout */}
                 <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
-                  onClick={() => handleConfigurationSection('Layout')}
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Layout")}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1131,13 +1273,18 @@ export default function Dashboard() {
                         <Layout className="w-6 h-6 text-indigo-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Layout
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      Personalitza l'aparença de la interfície, temes i disposició dels elements.
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Personalitza l'aparença de la interfície, temes i
+                      disposició dels elements.
                     </p>
                   </CardContent>
                 </Card>
