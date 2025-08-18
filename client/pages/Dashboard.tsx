@@ -270,7 +270,6 @@ export default function Dashboard() {
                       "Control de Sensors",
                       "Integracions",
                       "Registre d'Activitats",
-                      "Configuració",
                     ];
 
                     if (modalOptions.includes(item.label)) {
