@@ -29,6 +29,7 @@ import {
   ScrollText,
   Sun,
   Moon,
+  Plug,
 } from "lucide-react";
 
 export default function Dashboard() {
