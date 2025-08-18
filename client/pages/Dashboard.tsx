@@ -1401,10 +1401,10 @@ export default function Dashboard() {
 
             {/* Recommendations */}
             <div>
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">
+              <h2 className={`text-lg font-semibold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                 Recomanacions
               </h2>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className={`text-sm mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Aquí tens les 3 recomanacions del dia.
               </p>
 
