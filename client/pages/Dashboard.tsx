@@ -144,7 +144,7 @@ export default function Dashboard() {
       action: "Revisar",
     },
     {
-      text: "Tens 1 treballador a qui pots assignar m��s feina.",
+      text: "Tens 1 treballador a qui pots assignar més feina.",
       action: "Revisar",
     },
   ];
@@ -175,12 +175,28 @@ export default function Dashboard() {
               <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
               <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
             </button>
-            <button
-              onClick={() => setSidebarOpen(false)}
-              className="lg:hidden p-2 rounded-lg text-gray-400 hover:bg-gray-100"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center space-x-2">
+              {/* Dark mode toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors"
+                title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
+
+              {/* Mobile close button */}
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="lg:hidden p-2 rounded-lg text-gray-400 hover:bg-gray-100"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
         <div className="p-4">
