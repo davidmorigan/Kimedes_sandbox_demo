@@ -834,9 +834,20 @@ export default function Dashboard() {
                           Reparacions urgents requereixen atenció
                         </p>
                       </div>
-                      <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                        fa 4h
-                      </span>
+                      <div className="flex items-center space-x-2">
+                        <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                          fa 4h
+                        </span>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => handleNotificationDetail('tasks-pending-3', 'pending-tasks')}
+                          className={`ml-2 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-700' : 'border-gray-300 text-gray-600 hover:bg-gray-50'}`}
+                        >
+                          <Eye className="w-4 h-4 mr-1" />
+                          Veure detall
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
