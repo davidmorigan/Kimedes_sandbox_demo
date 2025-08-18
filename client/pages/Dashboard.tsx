@@ -251,7 +251,7 @@ export default function Dashboard() {
               <button
                 key={index}
                 onClick={() => {
-                  if (item.label === "Analítica") {
+                  if (item.label === "Informes i Analítica") {
                     setShowModal(true);
                   } else {
                     setActiveSection(item.label);
@@ -847,7 +847,7 @@ export default function Dashboard() {
                         <p
                           className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
                         >
-                          Sensor de pressi�� #A-2045 connectat a la xarxa
+                          Sensor de pressió #A-2045 connectat a la xarxa
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
