@@ -260,7 +260,7 @@ export default function Dashboard() {
                     }
                     setSidebarOpen(false); // Close mobile sidebar after selection
                   }}
-                  className="w-full flex items-center px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-colors"
+                  className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
                 >
                   <item.icon className="w-4 h-4 mr-3" />
                   {item.label}
