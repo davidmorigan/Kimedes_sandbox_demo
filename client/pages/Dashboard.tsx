@@ -256,7 +256,6 @@ export default function Dashboard() {
                       "Alertes",
                       "Gestió de Personal",
                       "Control de Sensors",
-                      "Notificacions",
                       "Integracions",
                       "Registre d'Activitats",
                       "Configuració",
