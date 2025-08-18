@@ -179,7 +179,7 @@ export default function Dashboard() {
               {/* Dark mode toggle */}
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors"
+                className={`p-2 rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-400 hover:bg-gray-100'}`}
                 title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {isDarkMode ? (
@@ -192,7 +192,7 @@ export default function Dashboard() {
               {/* Mobile close button */}
               <button
                 onClick={() => setSidebarOpen(false)}
-                className="lg:hidden p-2 rounded-lg text-gray-400 hover:bg-gray-100"
+                className={`lg:hidden p-2 rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-400 hover:bg-gray-100'}`}
               >
                 <X className="w-5 h-5" />
               </button>
