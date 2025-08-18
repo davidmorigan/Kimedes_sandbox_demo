@@ -200,7 +200,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="p-4">
-          <p className="text-sm text-gray-600 mt-1">
+          <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             <b>
               El meu poble
               <br />
