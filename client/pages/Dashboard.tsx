@@ -991,6 +991,134 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        ) : activeSection === "Configuració" ? (
+          /* Configuration Content */
+          <div>
+            <div className="mb-8">
+              <h2 className={`text-lg font-semibold mb-6 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                Configuració del Sistema
+              </h2>
+              <p className={`text-sm mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                Gestiona tots els aspectes de la configuració de Kimedes des d'aquí.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Configurar Usuari */}
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-blue-100 rounded-lg mr-4">
+                        <User className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Configurar Usuari
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Gestiona el perfil d'usuari, preferències personals i configuració del compte.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Configurar roles i permisos */}
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-purple-100 rounded-lg mr-4">
+                        <Shield className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Roles i Permisos
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Defineix roles d'usuari, permisos d'accés i nivells d'autorització del sistema.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Automatitzacions */}
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-yellow-100 rounded-lg mr-4">
+                        <Zap className="w-6 h-6 text-yellow-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Automatitzacions
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Configura processos automàtics, workflows i accions programades del sistema.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Configurar alertes */}
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-red-100 rounded-lg mr-4">
+                        <Bell className="w-6 h-6 text-red-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Configurar Alertes
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Estableix paràmetres d'alerta, umbral de notificacions i canals de comunicació.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Documentació API */}
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-green-100 rounded-lg mr-4">
+                        <Book className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Documentació API
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Accedeix a la documentació completa de l'API i guies d'integració.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Layout */}
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-indigo-100 rounded-lg mr-4">
+                        <Layout className="w-6 h-6 text-indigo-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Layout
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      Personalitza l'aparença de la interfície, temes i disposició dels elements.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
         ) : (
           /* Dashboard Content */
           <div>
