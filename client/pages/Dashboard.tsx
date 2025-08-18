@@ -45,6 +45,20 @@ export default function Dashboard() {
     navigate("/login");
   };
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  const handleKimedesClick = () => {
+    setActiveSection("Panell de control");
+    setSidebarOpen(false); // Close mobile sidebar if open
+  };
+
   const sidebarItems = [
     { icon: Home, label: "Panell de control" },
     { icon: MapPin, label: "Localització de Fuites" },
