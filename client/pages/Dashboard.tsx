@@ -67,6 +67,12 @@ export default function Dashboard() {
     setSidebarOpen(false); // Close mobile sidebar if open
   };
 
+  const handleNotificationDetail = (notificationId: string, type: string) => {
+    // En el futur aquesta funció redirigirà als detalls específics
+    console.log(`Veure detall de notificació: ${notificationId} (${type})`);
+    // TODO: Implementar navegació als detalls de la notificació
+  };
+
   const sidebarItems = [
     { icon: Home, label: "Panell de control" },
     { icon: MapPin, label: "Localització de Fuites" },
@@ -662,7 +668,7 @@ export default function Dashboard() {
                           id: "Leakage #13",
                           ratio: "20 L/s",
                           difficulty: "Mitja",
-                          value: "����8,535",
+                          value: "���8,535",
                           assignee: "Toni",
                           date: "25/03/2025",
                           status: "Arreglada",
