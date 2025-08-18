@@ -470,7 +470,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        ) : activeSection === "Detecció de fuites" ? (
+        ) : activeSection === "Detecció de Fuites" ? (
           /* Leak Detection Content */
           <div>
             {/* Indicadors Section */}
