@@ -233,7 +233,7 @@ export default function Dashboard() {
 
           {/* Admin Section */}
           <div className="mt-8">
-            <h3 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <h3 className={`px-3 text-xs font-semibold uppercase tracking-wider ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
               Admin
             </h3>
             <nav className="mt-2 space-y-1">
