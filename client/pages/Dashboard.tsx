@@ -293,7 +293,7 @@ export default function Dashboard() {
         <div className={`lg:hidden flex items-center justify-between mb-6 p-4 rounded-lg shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
           <button
             onClick={() => setSidebarOpen(true)}
-            className="p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+            className={`p-2 rounded-lg transition-colors ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-600 hover:bg-gray-100'}`}
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -302,7 +302,7 @@ export default function Dashboard() {
             className="flex items-center hover:opacity-80 transition-opacity"
           >
             <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
-            <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
+            <h1 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Kimedes</h1>
           </button>
           <div className="w-10"></div> {/* Spacer for centering */}
         </div>
