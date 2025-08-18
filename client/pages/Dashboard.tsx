@@ -275,10 +275,10 @@ export default function Dashboard() {
           </div>
 
           {/* Logout */}
-          <div className="mt-8 pt-4 border-t">
+          <div className={`mt-8 pt-4 border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
             <button
               onClick={handleLogout}
-              className="w-full flex items-center px-3 py-2 text-sm text-red-600 rounded-lg hover:bg-red-50 transition-colors"
+              className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? 'text-red-400 hover:bg-gray-700' : 'text-red-600 hover:bg-red-50'}`}
             >
               <LogOut className="w-4 h-4 mr-3" />
               Logout
