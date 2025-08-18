@@ -1011,7 +1011,10 @@ export default function Dashboard() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Configurar Usuari */}
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
+                  onClick={() => handleConfigurationSection('Configurar Usuari')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-blue-100 rounded-lg mr-4">
@@ -1030,7 +1033,10 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Configurar roles i permisos */}
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
+                  onClick={() => handleConfigurationSection('Roles i Permisos')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-purple-100 rounded-lg mr-4">
@@ -1049,7 +1055,10 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Automatitzacions */}
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
+                  onClick={() => handleConfigurationSection('Automatitzacions')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-yellow-100 rounded-lg mr-4">
