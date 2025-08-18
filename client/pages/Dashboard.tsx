@@ -168,10 +168,13 @@ export default function Dashboard() {
         {/* Header */}
         <div className="p-6 border-b">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            <button
+              onClick={handleKimedesClick}
+              className="flex items-center hover:opacity-80 transition-opacity"
+            >
               <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
               <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
-            </div>
+            </button>
             <button
               onClick={() => setSidebarOpen(false)}
               className="lg:hidden p-2 rounded-lg text-gray-400 hover:bg-gray-100"
