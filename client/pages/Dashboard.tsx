@@ -1312,7 +1312,7 @@ export default function Dashboard() {
                     className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}
                     onClick={() => {
                       if (metric.title === "Total Fuites Actives") {
-                        setActiveSection("Detecció de fuites");
+                        setActiveSection("Detecció de Fuites");
                       }
                     }}
                   >
