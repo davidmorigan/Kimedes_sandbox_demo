@@ -1077,7 +1077,10 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Configurar alertes */}
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
+                  onClick={() => handleConfigurationSection('Configurar Alertes')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-red-100 rounded-lg mr-4">
@@ -1096,7 +1099,10 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Documentació API */}
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
+                  onClick={() => handleConfigurationSection('Documentació API')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-green-100 rounded-lg mr-4">
@@ -1115,7 +1121,10 @@ export default function Dashboard() {
                 </Card>
 
                 {/* Layout */}
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'}`}
+                  onClick={() => handleConfigurationSection('Layout')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-indigo-100 rounded-lg mr-4">
