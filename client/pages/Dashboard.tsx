@@ -764,6 +764,179 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        ) : activeSection === "Notificacions" ? (
+          /* Notifications Content */
+          <div>
+            {/* Notificacions Internes */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  Notificacions Internes
+                </h2>
+                <div className={`flex items-center space-x-2 text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span>Avui</span>
+                  <Clock className="w-4 h-4" />
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {/* Nou dispositiu afegit */}
+                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-green-100 rounded-lg">
+                        <Plus className="w-5 h-5 text-green-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Nou dispositiu afegit
+                        </h3>
+                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                          Sensor de pressió #A-2045 connectat a la xarxa
+                        </p>
+                      </div>
+                      <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        fa 2h
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Tasques pendents */}
+                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-orange-100 rounded-lg">
+                        <AlertTriangle className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          3 tasques pendents de resoldre
+                        </h3>
+                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                          Reparacions urgents requereixen atenció
+                        </p>
+                      </div>
+                      <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        fa 4h
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Fallo integració */}
+                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-red-100 rounded-lg">
+                        <ExternalLink className="w-5 h-5 text-red-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Fallo amb dades integració
+                        </h3>
+                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                          Error de sincronització amb API externa
+                        </p>
+                      </div>
+                      <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        fa 6h
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Export realitzat */}
+                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-green-100 rounded-lg">
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                          Export realitzat amb èxit
+                        </h3>
+                        <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                          Informe mensual generat i enviat
+                        </p>
+                      </div>
+                      <span className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        ahir
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Notificacions Externes */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  Notificacions Externes Enviades
+                </h2>
+                <div className={`flex items-center space-x-2 text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <span>Últimes 24h</span>
+                  <Clock className="w-4 h-4" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* WhatsApp Stats */}
+                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className={`text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                        WhatsApp Enviats
+                      </h3>
+                      <div className="p-2 rounded-lg bg-green-100">
+                        <Smartphone className="w-4 h-4 text-green-600" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className={`text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        6
+                      </p>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-1" />
+                        <span className="text-green-600">Tots enviats amb èxit</span>
+                      </div>
+                      <div className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        Alertes de fuites crítiques
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Email Stats */}
+                <Card className={`border-0 shadow-sm ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className={`text-sm font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                        Emails Enviats
+                      </h3>
+                      <div className="p-2 rounded-lg bg-blue-100">
+                        <Mail className="w-4 h-4 text-blue-600" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className={`text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                        10
+                      </p>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-600 mr-1" />
+                        <span className="text-green-600">Tots enviats amb èxit</span>
+                      </div>
+                      <div className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                        Informes setmanals i alertes
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
         ) : (
           /* Dashboard Content */
           <div>
