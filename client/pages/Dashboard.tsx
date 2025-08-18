@@ -1401,10 +1401,14 @@ export default function Dashboard() {
 
             {/* Recommendations */}
             <div>
-              <h2 className={`text-lg font-semibold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h2
+                className={`text-lg font-semibold mb-4 ${isDarkMode ? "text-white" : "text-gray-900"}`}
+              >
                 Recomanacions
               </h2>
-              <p className={`text-sm mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p
+                className={`text-sm mb-4 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+              >
                 Aquí tens les 3 recomanacions del dia.
               </p>
 
@@ -1412,13 +1416,19 @@ export default function Dashboard() {
                 {recommendations.map((rec, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Tens</span>
-                    <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <span
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
+                    >
+                      Tens
+                    </span>
+                    <span
+                      className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                    >
                       {rec.text.split("Tens ")[1].split(".")[0]}.
                     </span>
                     <Button
                       variant="link"
-                      className={`p-0 h-auto text-sm ${isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
+                      className={`p-0 h-auto text-sm ${isDarkMode ? "text-blue-400 hover:text-blue-300" : "text-blue-600 hover:text-blue-700"}`}
                     >
                       {rec.action}
                     </Button>
