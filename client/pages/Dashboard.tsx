@@ -221,8 +221,8 @@ export default function Dashboard() {
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
                   activeSection === item.label
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? (isDarkMode ? "bg-cyan-600 text-white" : "bg-gray-900 text-white")
+                    : (isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100")
                 }`}
               >
                 <item.icon className="w-4 h-4 mr-3" />
