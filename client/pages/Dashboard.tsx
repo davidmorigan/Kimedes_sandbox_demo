@@ -86,10 +86,10 @@ export default function Dashboard() {
   };
 
   const sidebarItems = [
-    { icon: Home, label: "Panell de control" },
+    { icon: Home, label: "Panell de Control" },
     { icon: MapPin, label: "Localització de Fuites" },
-    { icon: Droplets, label: "Detecció de fuites" },
-    { icon: BarChart3, label: "Analítica" },
+    { icon: Droplets, label: "Detecció de Fuites" },
+    { icon: BarChart3, label: "Informes i Analítica" },
   ];
 
   const adminItems = [
