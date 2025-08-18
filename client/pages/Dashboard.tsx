@@ -150,7 +150,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className={`min-h-screen flex ${isDarkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
