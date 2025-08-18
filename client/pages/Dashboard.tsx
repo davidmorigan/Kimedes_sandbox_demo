@@ -161,7 +161,7 @@ export default function Dashboard() {
 
       {/* Sidebar */}
       <div
-        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white shadow-sm border-r transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm border-r transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -246,7 +246,7 @@ export default function Dashboard() {
                       "Facturació",
                       "Informes de Freu",
                       "Alertes",
-                      "Gestió de Personal",
+                      "Gesti�� de Personal",
                       "Control de Sensors",
                       "Notificacions",
                       "Registre d'Activitats",
