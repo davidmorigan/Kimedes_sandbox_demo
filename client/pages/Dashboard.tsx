@@ -166,14 +166,14 @@ export default function Dashboard() {
         }`}
       >
         {/* Header */}
-        <div className="p-6 border-b">
+        <div className={`p-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
           <div className="flex items-center justify-between">
             <button
               onClick={handleKimedesClick}
               className="flex items-center hover:opacity-80 transition-opacity"
             >
               <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
-              <h1 className="text-xl font-bold text-gray-900">Kimedes</h1>
+              <h1 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Kimedes</h1>
             </button>
             <div className="flex items-center space-x-2">
               {/* Dark mode toggle */}
@@ -246,7 +246,7 @@ export default function Dashboard() {
                       "Facturació",
                       "Informes de Freu",
                       "Alertes",
-                      "Gesti�� de Personal",
+                      "Gestió de Personal",
                       "Control de Sensors",
                       "Notificacions",
                       "Registre d'Activitats",
