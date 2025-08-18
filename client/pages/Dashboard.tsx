@@ -37,6 +37,11 @@ import {
   ExternalLink,
   Clock,
   Eye,
+  User,
+  Shield,
+  Settings2,
+  Book,
+  Layout,
 } from "lucide-react";
 
 export default function Dashboard() {
