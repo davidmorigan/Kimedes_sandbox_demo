@@ -94,7 +94,7 @@ export default function Dashboard() {
 
   const adminItems = [
     { icon: FileText, label: "Facturació" },
-    { icon: ShieldAlert, label: "Informes de Freu" },
+    { icon: ShieldAlert, label: "Informes de Frau" },
     { icon: AlertTriangle, label: "Alertes", hasNotification: true },
     { icon: Users, label: "Gestió de Personal" },
     { icon: Radio, label: "Control de Sensors" },
@@ -1334,7 +1334,9 @@ export default function Dashboard() {
                         <div className="flex items-center text-sm">
                           <span
                             className={
-                              metric.trend === "up"
+                              metric.title === "Total Fuites Actives" || metric.title === "CO2 Emès"
+                                ? "text-green-600"
+                                : metric.trend === "up"
                                 ? "text-green-600"
                                 : "text-red-600"
                             }
@@ -1388,7 +1390,11 @@ export default function Dashboard() {
                           {metric.value}
                         </p>
                         <div className="flex items-center text-sm">
-                          <span className="text-red-600">
+                          <span className={
+                            metric.title === "Aigua demandada"
+                              ? "text-green-600"
+                              : "text-red-600"
+                          }>
                             + {metric.change}
                           </span>
                         </div>
