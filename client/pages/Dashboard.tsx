@@ -264,20 +264,7 @@ export default function Dashboard() {
                 <button
                   key={index}
                   onClick={() => {
-                    const modalOptions = [
-                      "Facturació",
-                      "Alertes",
-                      "Gestió de Personal",
-                      "Configuració",
-                      "Registre d'Activitats",
-                      "Integracions",
-                    ];
-
-                    if (modalOptions.includes(item.label)) {
-                      setShowModal(true);
-                    } else {
-                      setActiveSection(item.label);
-                    }
+                    setActiveSection(item.label);
                     setSidebarOpen(false); // Close mobile sidebar after selection
                   }}
                   className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100"}`}
