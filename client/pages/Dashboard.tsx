@@ -95,7 +95,6 @@ export default function Dashboard() {
 
   const adminItems = [
     { icon: FileText, label: "Facturació" },
-    { icon: ShieldAlert, label: "Informes de Frau" },
     { icon: AlertTriangle, label: "Alertes", hasNotification: true },
     { icon: Users, label: "Gestió de Personal" },
     { icon: Settings, label: "Configuració" },
@@ -259,12 +258,7 @@ export default function Dashboard() {
           </nav>
 
           {/* Admin Section */}
-          <div className="mt-8">
-            <h3
-              className={`px-3 text-xs font-semibold uppercase tracking-wider ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}
-            >
-              Admin
-            </h3>
+          <div className="mt-4">
             <nav className="mt-2 space-y-1">
               {adminItems.map((item, index) => (
                 <button
@@ -272,12 +266,11 @@ export default function Dashboard() {
                   onClick={() => {
                     const modalOptions = [
                       "Facturació",
-                      "Informes de Frau",
                       "Alertes",
                       "Gestió de Personal",
-                      "Control de Sensors",
-                      "Integracions",
+                      "Configuració",
                       "Registre d'Activitats",
+                      "Integracions",
                     ];
 
                     if (modalOptions.includes(item.label)) {
@@ -804,35 +797,66 @@ export default function Dashboard() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                <Card className="border-0">
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
                   <CardContent className="p-6">
-                    <h3 className="text-sm font-medium text-gray-700">La teva petjada de carboni</h3>
-                    <p className="mt-3 text-2xl font-bold text-gray-900">120 T</p>
-                    <p className="text-sm text-gray-500 mt-2">Comparat amb el període anterior</p>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-green-100 rounded-lg mr-4">
+                        <Leaf className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>La teva petjada de carboni</h3>
+                      </div>
+                    </div>
+                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>120 T</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Comparat amb el període anterior</p>
                   </CardContent>
                 </Card>
 
-                <Card className="border-0">
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
                   <CardContent className="p-6">
-                    <h3 className="text-sm font-medium text-gray-700">La teva petjada hídrica</h3>
-                    <p className="mt-3 text-2xl font-bold text-gray-900">800 M3</p>
-                    <p className="text-sm text-gray-500 mt-2">Consumo estimat</p>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-cyan-100 rounded-lg mr-4">
+                        <Droplets className="w-6 h-6 text-cyan-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>La teva petjada hídrica</h3>
+                      </div>
+                    </div>
+                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>800 M3</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Consum estimat</p>
                   </CardContent>
                 </Card>
 
-                <Card className="border-0">
+                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
                   <CardContent className="p-6">
-                    <h3 className="text-sm font-medium text-gray-700">Altres informes de rendiment</h3>
-                    <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
-                    <p className="text-sm text-gray-500 mt-2">Informes detallats de rendiment</p>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-indigo-100 rounded-lg mr-4">
+                        <FileText className="w-6 h-6 text-indigo-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Altres informes de rendiment</h3>
+                      </div>
+                    </div>
+                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Informes detallats de rendiment</p>
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 cursor-pointer" onClick={() => setActiveSection("Informes de Fraus")}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                  onClick={() => setActiveSection("Informes de Fraus")}
+                >
                   <CardContent className="p-6">
-                    <h3 className="text-sm font-medium text-gray-700">Informes de Fraus</h3>
-                    <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
-                    <p className="text-sm text-gray-500 mt-2">Detecció i anàlisi de possibles fraus</p>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-orange-100 rounded-lg mr-4">
+                        <ShieldAlert className="w-6 h-6 text-orange-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Informes de Fraus</h3>
+                      </div>
+                    </div>
+                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure</p>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Detecció i anàlisi de possibles fraus</p>
                   </CardContent>
                 </Card>
               </div>
