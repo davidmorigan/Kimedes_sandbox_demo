@@ -98,10 +98,7 @@ export default function Dashboard() {
     { icon: ShieldAlert, label: "Informes de Frau" },
     { icon: AlertTriangle, label: "Alertes", hasNotification: true },
     { icon: Users, label: "Gestió de Personal" },
-    { icon: Radio, label: "Control de Sensors" },
-    { icon: Bell, label: "Notificacions" },
-    { icon: Plug, label: "Integracions" },
-    { icon: ScrollText, label: "Registre d'Activitats" },
+    { icon: Radio, label: "Gestió de Sensors" },
     { icon: Settings, label: "Configuració" },
   ];
 
@@ -1283,6 +1280,94 @@ export default function Dashboard() {
                     >
                       Accedeix a la documentació completa de l'API i guies
                       d'integració.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Integracions */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Integracions")}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-amber-100 rounded-lg mr-4">
+                        <Plug className="w-6 h-6 text-amber-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                          Integracions
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Connecta i configura integracions externes.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Registre d'Activitats */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Registre d'Activitats")}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-sky-100 rounded-lg mr-4">
+                        <ScrollText className="w-6 h-6 text-sky-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                          Registre d'Activitats
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Consulta l'històric d'activitats del sistema.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Gestió de Sensors */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Gestió de Sensors")}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-emerald-100 rounded-lg mr-4">
+                        <Radio className="w-6 h-6 text-emerald-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                          Gestió de Sensors
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Gestiona l'estat dels sensors i la seva configuració.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Notificacions */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Notificacions")}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-red-100 rounded-lg mr-4">
+                        <Bell className="w-6 h-6 text-red-600" />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                          Notificacions
+                        </h3>
+                      </div>
+                    </div>
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Configura canals i preferències de notificacions.
                     </p>
                   </CardContent>
                 </Card>
