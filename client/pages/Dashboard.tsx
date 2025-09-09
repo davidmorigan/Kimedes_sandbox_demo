@@ -98,7 +98,6 @@ export default function Dashboard() {
     { icon: ShieldAlert, label: "Informes de Frau" },
     { icon: AlertTriangle, label: "Alertes", hasNotification: true },
     { icon: Users, label: "Gestió de Personal" },
-    { icon: Radio, label: "Gestió de Sensors" },
     { icon: Settings, label: "Configuració" },
   ];
 
