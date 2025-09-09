@@ -47,6 +47,7 @@ import {
 export default function Dashboard() {
   const [activeSection, setActiveSection] = useState("Panell de Control");
   const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState<string | null>(null);
   const [selectedLeaks, setSelectedLeaks] = useState<number[]>([1, 3, 6]); // Initial selected items
   const [selectAll, setSelectAll] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -87,6 +88,7 @@ export default function Dashboard() {
 
   const sidebarItems = [
     { icon: Home, label: "Panell de Control" },
+    { icon: Eye, label: "Monitorització" },
     { icon: MapPin, label: "Localització de Fuites" },
     { icon: Droplets, label: "Detecció de Fuites" },
     { icon: BarChart3, label: "Informes i Analítica" },
@@ -237,21 +239,13 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="p-4">
-          <p
-            className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
-          >
-            <b>
-              El meu poble
-              <br />
-            </b>
-            <br />
-          </p>
           <nav className="space-y-1">
             {sidebarItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => {
                   if (item.label === "Informes i Analítica") {
+                    setModalType("informes");
                     setShowModal(true);
                   } else {
                     setActiveSection(item.label);
@@ -289,7 +283,7 @@ export default function Dashboard() {
                     const modalOptions = [
                       "Informes i Analítica",
                       "Facturació",
-                      "Informes de Freu",
+                      "Informes de Frau",
                       "Alertes",
                       "Gestió de Personal",
                       "Control de Sensors",
@@ -297,7 +291,10 @@ export default function Dashboard() {
                       "Registre d'Activitats",
                     ];
 
-                    if (modalOptions.includes(item.label)) {
+                    if (item.label === "Informes i Analítica") {
+                      setModalType("informes");
+                      setShowModal(true);
+                    } else if (modalOptions.includes(item.label)) {
                       setShowModal(true);
                     } else {
                       setActiveSection(item.label);
@@ -1457,7 +1454,7 @@ export default function Dashboard() {
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-md w-full mx-auto shadow-2xl animate-in fade-in duration-200">
+          <div className="bg-white rounded-xl max-w-3xl w-full mx-auto shadow-2xl animate-in fade-in duration-200">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b">
               <div className="flex items-center space-x-3">
@@ -1465,11 +1462,11 @@ export default function Dashboard() {
                   <AlertTriangle className="w-5 h-5 text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">
-                  OOPS! Encara no ho tenim!
+                  {modalType === "informes" ? "Informes i Analítica" : "OOPS! Encara no ho tenim!"}
                 </h3>
               </div>
               <button
-                onClick={() => setShowModal(false)}
+                onClick={() => { setShowModal(false); setModalType(null); }}
                 className="p-1 hover:bg-gray-100 rounded-full transition-colors"
               >
                 <X className="w-5 h-5 text-gray-400" />
@@ -1478,17 +1475,45 @@ export default function Dashboard() {
 
             {/* Modal Content */}
             <div className="p-6">
-              <p className="text-gray-600 leading-relaxed">
-                Gràcies pel teu interès, però aquesta funcionalitat encara no
-                està activa. Estigues atent als pròxims llançaments del
-                producte.
-              </p>
+              {modalType === "informes" ? (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Card className="border-0">
+                    <CardContent className="p-4">
+                      <h4 className="text-sm font-medium text-gray-700">La teva petjada de carboni</h4>
+                      <p className="mt-3 text-2xl font-bold text-gray-900">120 T</p>
+                      <p className="text-sm text-gray-500 mt-2">Comparat amb el període anterior</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-0">
+                    <CardContent className="p-4">
+                      <h4 className="text-sm font-medium text-gray-700">La teva petjada hídrica</h4>
+                      <p className="mt-3 text-2xl font-bold text-gray-900">800 M3</p>
+                      <p className="text-sm text-gray-500 mt-2">Consumo estimat</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-0">
+                    <CardContent className="p-4">
+                      <h4 className="text-sm font-medium text-gray-700">Altres informes de rendiment</h4>
+                      <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
+                      <p className="text-sm text-gray-500 mt-2">Informes detallats de rendiment</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ) : (
+                <p className="text-gray-600 leading-relaxed">
+                  Gràcies pel teu interès, però aquesta funcionalitat encara no
+                  està activa. Estigues atent als pròxims llançaments del
+                  producte.
+                </p>
+              )}
             </div>
 
             {/* Modal Footer */}
             <div className="px-6 pb-6">
               <Button
-                onClick={() => setShowModal(false)}
+                onClick={() => { setShowModal(false); setModalType(null); }}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Tancar
