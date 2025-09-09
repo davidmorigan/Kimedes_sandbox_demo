@@ -47,7 +47,6 @@ import {
 export default function Dashboard() {
   const [activeSection, setActiveSection] = useState("Panell de Control");
   const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState<string | null>(null);
   const [selectedLeaks, setSelectedLeaks] = useState<number[]>([1, 3, 6]); // Initial selected items
   const [selectAll, setSelectAll] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -244,12 +243,7 @@ export default function Dashboard() {
               <button
                 key={index}
                 onClick={() => {
-                  if (item.label === "Informes i Analítica") {
-                    setModalType("informes");
-                    setShowModal(true);
-                  } else {
-                    setActiveSection(item.label);
-                  }
+                  setActiveSection(item.label);
                   setSidebarOpen(false); // Close mobile sidebar after selection
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
@@ -281,7 +275,6 @@ export default function Dashboard() {
                   key={index}
                   onClick={() => {
                     const modalOptions = [
-                      "Informes i Analítica",
                       "Facturació",
                       "Informes de Frau",
                       "Alertes",
@@ -291,10 +284,7 @@ export default function Dashboard() {
                       "Registre d'Activitats",
                     ];
 
-                    if (item.label === "Informes i Analítica") {
-                      setModalType("informes");
-                      setShowModal(true);
-                    } else if (modalOptions.includes(item.label)) {
+                    if (modalOptions.includes(item.label)) {
                       setShowModal(true);
                     } else {
                       setActiveSection(item.label);
@@ -803,6 +793,44 @@ export default function Dashboard() {
                     </Button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Informes i Analítica" ? (
+          <div>
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-semibold text-gray-900">Informes i Analítica</h2>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <span>Mes en curs</span>
+                  <Calendar className="w-4 h-4" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <Card className="border-0">
+                  <CardContent className="p-6">
+                    <h3 className="text-sm font-medium text-gray-700">La teva petjada de carboni</h3>
+                    <p className="mt-3 text-2xl font-bold text-gray-900">120 T</p>
+                    <p className="text-sm text-gray-500 mt-2">Comparat amb el període anterior</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-0">
+                  <CardContent className="p-6">
+                    <h3 className="text-sm font-medium text-gray-700">La teva petjada hídrica</h3>
+                    <p className="mt-3 text-2xl font-bold text-gray-900">800 M3</p>
+                    <p className="text-sm text-gray-500 mt-2">Consumo estimat</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-0">
+                  <CardContent className="p-6">
+                    <h3 className="text-sm font-medium text-gray-700">Altres informes de rendiment</h3>
+                    <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
+                    <p className="text-sm text-gray-500 mt-2">Informes detallats de rendiment</p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
@@ -1461,12 +1489,10 @@ export default function Dashboard() {
                 <div className="p-2 bg-orange-100 rounded-full">
                   <AlertTriangle className="w-5 h-5 text-orange-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {modalType === "informes" ? "Informes i Analítica" : "OOPS! Encara no ho tenim!"}
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900">OOPS! Encara no ho tenim!</h3>
               </div>
               <button
-                onClick={() => { setShowModal(false); setModalType(null); }}
+                onClick={() => setShowModal(false)}
                 className="p-1 hover:bg-gray-100 rounded-full transition-colors"
               >
                 <X className="w-5 h-5 text-gray-400" />
@@ -1475,45 +1501,17 @@ export default function Dashboard() {
 
             {/* Modal Content */}
             <div className="p-6">
-              {modalType === "informes" ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Card className="border-0">
-                    <CardContent className="p-4">
-                      <h4 className="text-sm font-medium text-gray-700">La teva petjada de carboni</h4>
-                      <p className="mt-3 text-2xl font-bold text-gray-900">120 T</p>
-                      <p className="text-sm text-gray-500 mt-2">Comparat amb el període anterior</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-0">
-                    <CardContent className="p-4">
-                      <h4 className="text-sm font-medium text-gray-700">La teva petjada hídrica</h4>
-                      <p className="mt-3 text-2xl font-bold text-gray-900">800 M3</p>
-                      <p className="text-sm text-gray-500 mt-2">Consumo estimat</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-0">
-                    <CardContent className="p-4">
-                      <h4 className="text-sm font-medium text-gray-700">Altres informes de rendiment</h4>
-                      <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
-                      <p className="text-sm text-gray-500 mt-2">Informes detallats de rendiment</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              ) : (
-                <p className="text-gray-600 leading-relaxed">
-                  Gràcies pel teu interès, però aquesta funcionalitat encara no
-                  està activa. Estigues atent als pròxims llançaments del
-                  producte.
-                </p>
-              )}
+              <p className="text-gray-600 leading-relaxed">
+                Gràcies pel teu interès, però aquesta funcionalitat encara no
+                està activa. Estigues atent als pròxims llançaments del
+                producte.
+              </p>
             </div>
 
             {/* Modal Footer */}
             <div className="px-6 pb-6">
               <Button
-                onClick={() => { setShowModal(false); setModalType(null); }}
+                onClick={() => setShowModal(false)}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Tancar
