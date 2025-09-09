@@ -238,7 +238,12 @@ export default function Dashboard() {
               <button
                 key={index}
                 onClick={() => {
-                  setActiveSection(item.label);
+                  const modalLabels = ["Monitorització"];
+                  if (modalLabels.includes(item.label)) {
+                    setShowModal(true);
+                  } else {
+                    setActiveSection(item.label);
+                  }
                   setSidebarOpen(false); // Close mobile sidebar after selection
                 }}
                 className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
@@ -264,7 +269,12 @@ export default function Dashboard() {
                 <button
                   key={index}
                   onClick={() => {
-                    setActiveSection(item.label);
+                    const modalLabels = ["Facturació", "Alertes", "Gestió de Personal"];
+                    if (modalLabels.includes(item.label)) {
+                      setShowModal(true);
+                    } else {
+                      setActiveSection(item.label);
+                    }
                     setSidebarOpen(false); // Close mobile sidebar after selection
                   }}
                   className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100"}`}
