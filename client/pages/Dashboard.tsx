@@ -269,7 +269,11 @@ export default function Dashboard() {
                 <button
                   key={index}
                   onClick={() => {
-                    const modalLabels = ["Facturació", "Alertes", "Gestió de Personal"];
+                    const modalLabels = [
+                      "Facturació",
+                      "Alertes",
+                      "Gestió de Personal",
+                    ];
                     if (modalLabels.includes(item.label)) {
                       setShowModal(true);
                     } else {
@@ -786,7 +790,9 @@ export default function Dashboard() {
           <div>
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-semibold text-gray-900">Informes i Analítica</h2>
+                <h2 className="text-lg font-semibold text-gray-900">
+                  Informes i Analítica
+                </h2>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <span>Mes en curs</span>
                   <Calendar className="w-4 h-4" />
@@ -794,48 +800,90 @@ export default function Dashboard() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-green-100 rounded-lg mr-4">
                         <Leaf className="w-6 h-6 text-green-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>La teva petjada de carboni</h3>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          La teva petjada de carboni
+                        </h3>
                       </div>
                     </div>
-                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>120 T</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Comparat amb el període anterior</p>
+                    <p
+                      className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                    >
+                      120 T
+                    </p>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}
+                    >
+                      Comparat amb el període anterior
+                    </p>
                   </CardContent>
                 </Card>
 
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-cyan-100 rounded-lg mr-4">
                         <Droplets className="w-6 h-6 text-cyan-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>La teva petjada hídrica</h3>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          La teva petjada hídrica
+                        </h3>
                       </div>
                     </div>
-                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>800 M3</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Consum estimat</p>
+                    <p
+                      className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                    >
+                      800 M3
+                    </p>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}
+                    >
+                      Consum estimat
+                    </p>
                   </CardContent>
                 </Card>
 
-                <Card className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-indigo-100 rounded-lg mr-4">
                         <FileText className="w-6 h-6 text-indigo-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Altres informes de rendiment</h3>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Altres informes de rendiment
+                        </h3>
                       </div>
                     </div>
-                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Informes detallats de rendiment</p>
+                    <p
+                      className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                    >
+                      Veure
+                    </p>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}
+                    >
+                      Informes detallats de rendiment
+                    </p>
                   </CardContent>
                 </Card>
 
@@ -849,11 +897,23 @@ export default function Dashboard() {
                         <ShieldAlert className="w-6 h-6 text-orange-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Informes de Fraus</h3>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Informes de Fraus
+                        </h3>
                       </div>
                     </div>
-                    <p className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure</p>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}>Detecció i anàlisi de possibles fraus</p>
+                    <p
+                      className={`mt-3 text-2xl font-bold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                    >
+                      Veure
+                    </p>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-500"} mt-2`}
+                    >
+                      Detecció i anàlisi de possibles fraus
+                    </p>
                   </CardContent>
                 </Card>
               </div>
@@ -1323,12 +1383,16 @@ export default function Dashboard() {
                         <Plug className="w-6 h-6 text-amber-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Integracions
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
                       Connecta i configura integracions externes.
                     </p>
                   </CardContent>
@@ -1337,7 +1401,9 @@ export default function Dashboard() {
                 {/* Registre d'Activitats */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Registre d'Activitats")}
+                  onClick={() =>
+                    handleConfigurationSection("Registre d'Activitats")
+                  }
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1345,12 +1411,16 @@ export default function Dashboard() {
                         <ScrollText className="w-6 h-6 text-sky-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Registre d'Activitats
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
                       Consulta l'històric d'activitats del sistema.
                     </p>
                   </CardContent>
@@ -1359,7 +1429,9 @@ export default function Dashboard() {
                 {/* Gestió de Sensors */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Gestió de Sensors")}
+                  onClick={() =>
+                    handleConfigurationSection("Gestió de Sensors")
+                  }
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
@@ -1367,12 +1439,16 @@ export default function Dashboard() {
                         <Radio className="w-6 h-6 text-emerald-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Gestió de Sensors
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
                       Gestiona l'estat dels sensors i la seva configuració.
                     </p>
                   </CardContent>
@@ -1389,12 +1465,16 @@ export default function Dashboard() {
                         <Bell className="w-6 h-6 text-red-600" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
                           Notificacions
                         </h3>
                       </div>
                     </div>
-                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
                       Configura canals i preferències de notificacions.
                     </p>
                   </CardContent>
@@ -1472,11 +1552,12 @@ export default function Dashboard() {
                         <div className="flex items-center text-sm">
                           <span
                             className={
-                              metric.title === "Total Fuites Actives" || metric.title === "CO2 Emès"
+                              metric.title === "Total Fuites Actives" ||
+                              metric.title === "CO2 Emès"
                                 ? "text-green-600"
                                 : metric.trend === "up"
-                                ? "text-green-600"
-                                : "text-red-600"
+                                  ? "text-green-600"
+                                  : "text-red-600"
                             }
                           >
                             {metric.trend === "up" ? "+" : "-"} {metric.change}
@@ -1528,11 +1609,13 @@ export default function Dashboard() {
                           {metric.value}
                         </p>
                         <div className="flex items-center text-sm">
-                          <span className={
-                            metric.title === "Aigua demandada"
-                              ? "text-green-600"
-                              : "text-red-600"
-                          }>
+                          <span
+                            className={
+                              metric.title === "Aigua demandada"
+                                ? "text-green-600"
+                                : "text-red-600"
+                            }
+                          >
                             + {metric.change}
                           </span>
                         </div>
@@ -1602,7 +1685,9 @@ export default function Dashboard() {
                 <div className="p-2 bg-orange-100 rounded-full">
                   <AlertTriangle className="w-5 h-5 text-orange-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">OOPS! Encara no ho tenim!</h3>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  OOPS! Encara no ho tenim!
+                </h3>
               </div>
               <button
                 onClick={() => setShowModal(false)}
