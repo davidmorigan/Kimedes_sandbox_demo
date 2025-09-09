@@ -804,7 +804,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
                 <Card className="border-0">
                   <CardContent className="p-6">
                     <h3 className="text-sm font-medium text-gray-700">La teva petjada de carboni</h3>
@@ -826,6 +826,14 @@ export default function Dashboard() {
                     <h3 className="text-sm font-medium text-gray-700">Altres informes de rendiment</h3>
                     <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
                     <p className="text-sm text-gray-500 mt-2">Informes detallats de rendiment</p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-0 cursor-pointer" onClick={() => setActiveSection("Informes de Fraus")}>
+                  <CardContent className="p-6">
+                    <h3 className="text-sm font-medium text-gray-700">Informes de Fraus</h3>
+                    <p className="mt-3 text-2xl font-bold text-gray-900">Veure</p>
+                    <p className="text-sm text-gray-500 mt-2">Detecció i anàlisi de possibles fraus</p>
                   </CardContent>
                 </Card>
               </div>
