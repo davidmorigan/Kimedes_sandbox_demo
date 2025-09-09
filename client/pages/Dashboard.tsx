@@ -233,7 +233,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="p-4">
-          <nav className="space-y-1">
+          <nav className="space-y-2">
             {sidebarItems.map((item, index) => (
               <button
                 key={index}
@@ -264,7 +264,7 @@ export default function Dashboard() {
 
           {/* Admin Section */}
           <div className="mt-4">
-            <nav className="mt-2 space-y-1">
+            <nav className="mt-4 space-y-2">
               {adminItems.map((item, index) => (
                 <button
                   key={index}
