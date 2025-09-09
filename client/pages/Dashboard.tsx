@@ -1381,7 +1381,7 @@ export default function Dashboard() {
                 {/* Notificacions */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Notificacions")}
+                  onClick={() => setActiveSection("Notificacions")}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
