@@ -982,20 +982,35 @@ export default function Dashboard() {
 
                 <div className={`mt-4 p-4 rounded-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} border ${isDarkMode ? "border-gray-700" : "border-gray-200"}`}>
                   <div className="flex flex-wrap items-center gap-3">
-                    <Input placeholder="Cercar informe, mètrica o etiqueta..." className="max-w-sm" />
                     <select className={`h-10 px-3 rounded border ${isDarkMode ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-700"}`}>
-                      <option>Tipus d'informe</option>
-                      <option>Cost</option>
-                      <option>Consum</option>
-                      <option>Emissions</option>
+                      <option>Selecciona DMA</option>
+                      <option>DMA 1</option>
+                      <option>DMA 2</option>
+                      <option>DMA 3</option>
                     </select>
+
                     <select className={`h-10 px-3 rounded border ${isDarkMode ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-700"}`}>
                       <option>Període</option>
                       <option>Últim mes</option>
                       <option>Últims 3 mesos</option>
                       <option>Últim any</option>
                     </select>
+
+                    <select className={`h-10 px-3 rounded border ${isDarkMode ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-700"}`}>
+                      <option>Sensor</option>
+                      <option>Sensor 001</option>
+                      <option>Sensor 002</option>
+                      <option>Sensor 003</option>
+                    </select>
+
                     <Button className="ml-auto bg-cyan-500 text-white hover:bg-cyan-600">Aplicar</Button>
+                  </div>
+                </div>
+
+                {/* No dades placeholder for charts */}
+                <div className="mt-4">
+                  <div className={`h-48 rounded-lg flex items-center justify-center ${isDarkMode ? "bg-gray-800 border border-gray-700 text-gray-300" : "bg-white border border-gray-200 text-gray-500"}`}>
+                    No dades
                   </div>
                 </div>
               </div>
