@@ -590,7 +590,7 @@ export default function Dashboard() {
                 </h2>
                 <div className="flex items-center space-x-3">
                   <Button variant="outline" size="sm" className="text-gray-600">
-                    <Search className="w-4 h-4 mr-2" />
+                    <Download className="w-4 h-4 mr-2" />
                     Exporta
                   </Button>
                 </div>
