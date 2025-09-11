@@ -320,7 +320,6 @@ export default function Dashboard() {
                   onClick={() => {
                     const modalLabels = [
                       "Facturació",
-                      "Alertes",
                       "Gestió de Personal",
                     ];
                     if (modalLabels.includes(item.label)) {
