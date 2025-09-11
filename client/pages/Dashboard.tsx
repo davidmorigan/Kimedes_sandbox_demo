@@ -53,6 +53,7 @@ export default function Dashboard() {
   const [selectAll, setSelectAll] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [expandedRow, setExpandedRow] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleLogout = () => {
