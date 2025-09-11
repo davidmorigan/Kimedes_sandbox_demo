@@ -213,6 +213,21 @@ export default function Dashboard() {
     },
   ];
 
+  const alertItems = [
+    {
+      title: "Nou decret sobre restriccions d'aigua",
+      desc: "Nou decret aprovat amb restriccions i recomanacions d'ús",
+    },
+    {
+      title: "Alerta sobre sequera: llistat de comarques i mesures",
+      desc: "Informació per comarques amb mesures proposades per reducció d'ús",
+    },
+    {
+      title: "Alerta sobre canvis en els reglaments sobre ús d'aigua",
+      desc: "Actualització normativa sobre condicionaments i permisos d'ús",
+    },
+  ];
+
   const visibleMetrics = activeSection === "Alertes" ? metrics.filter((m) => !["CO2 Emès","Eficiència de la xarxa","Aigua demandada"].includes(m.title)) : metrics;
 
   return (
@@ -1680,7 +1695,16 @@ export default function Dashboard() {
             {/* Resume Section */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-semibold text-gray-900">Resum</h2>
+                <div>
+                  <h2 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                    {activeSection === "Alertes" ? "Les teves alertes configurades" : "Resum"}
+                  </h2>
+                  {activeSection === "Alertes" && (
+                    <p className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+                      Aquesta secció t'informa dels esdeveniments importants dins els paràmetres que has configurat.
+                    </p>
+                  )}
+                </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <span>Mes en curs</span>
                   <Calendar className="w-4 h-4" />
@@ -1764,22 +1788,43 @@ export default function Dashboard() {
               <div className={isDarkMode ? "border-t border-gray-700 mt-4 mb-4" : "border-t border-gray-200 mt-4 mb-4"}></div>
 
               <div className="space-y-3">
-                {recommendations.map((rec, index) => (
-                  <Card key={index} className="bg-white border-0 shadow-sm">
-                    <CardContent className="p-4 flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                        <div>
-                          <div className={isDarkMode ? "text-sm text-gray-300" : "text-sm text-gray-700"}>Tens</div>
-                          <div className={isDarkMode ? "font-semibold text-white" : "font-semibold text-gray-900"}>{rec.text.split("Tens ")[1].split(".")[0]}.</div>
+                {activeSection === "Alertes" ? (
+                  alertItems.map((item, idx) => (
+                    <Card key={idx} className="bg-white border-0 shadow-sm">
+                      <CardContent className="p-4 flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="p-2 bg-blue-100 rounded-lg">
+                            <Bell className="w-5 h-5 text-blue-600" />
+                          </div>
+                          <div>
+                            <div className={isDarkMode ? "text-sm text-gray-300" : "text-sm text-gray-700"}>{item.title}</div>
+                            <div className={isDarkMode ? "font-semibold text-white" : "font-semibold text-gray-900"}>{item.desc}</div>
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <Button onClick={() => setActiveSection("Detecció de Fuites")} className="bg-cyan-500 text-white hover:bg-cyan-600">REVISAR</Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                        <div>
+                          <Button className="bg-cyan-500 text-white hover:bg-cyan-600">VEURE</Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))
+                ) : (
+                  recommendations.map((rec, index) => (
+                    <Card key={index} className="bg-white border-0 shadow-sm">
+                      <CardContent className="p-4 flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                          <div>
+                            <div className={isDarkMode ? "text-sm text-gray-300" : "text-sm text-gray-700"}>Tens</div>
+                            <div className={isDarkMode ? "font-semibold text-white" : "font-semibold text-gray-900"}>{rec.text.split("Tens ")[1].split(".")[0]}.</div>
+                          </div>
+                        </div>
+                        <div>
+                          <Button onClick={() => setActiveSection("Detecció de Fuites")} className="bg-cyan-500 text-white hover:bg-cyan-600">REVISAR</Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))
+                )}
               </div>
             </div>
           </div>
