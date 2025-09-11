@@ -227,6 +227,14 @@ export default function Dashboard() {
     },
   ];
 
+  const sensorsTable = Array.from({ length: 10 }).map((_, i) => ({
+    id: `S-${1000 + i}`,
+    name: `Sensor ${i + 1}`,
+    location: `Zona ${String.fromCharCode(65 + (i % 6))}`,
+    status: i % 3 === 0 ? "Actiu" : i % 3 === 1 ? "Manteniment" : "Inactiu",
+    lastReading: `${Math.floor(Math.random() * 100)} m³`
+  }));
+
   const visibleMetrics = activeSection === "Alertes" ? metrics.filter((m) => !["CO2 Emès","Eficiència de la xarxa","Aigua demandada"].includes(m.title)) : metrics;
 
   return (
@@ -435,7 +443,62 @@ export default function Dashboard() {
         </div>
 
         {/* Content based on active section */}
-        {activeSection === "Localització de Fuites" ? (
+        {activeSection === "Gestió de Sensors" ? (
+          /* Gestió de Sensors Screen */
+          <div>
+            <div className="mb-6 flex items-start justify-between">
+              <div>
+                <div className="text-sm text-gray-500 mb-1">
+                  <button
+                    onClick={() => setActiveSection("Configuració")}
+                    className="text-sm text-cyan-600 hover:underline mr-2"
+                  >
+                    Configuració del Sistema
+                  </button>
+                  <span className="text-gray-400">&gt;</span>
+                  <span className="ml-2 font-semibold">Gestió de Sensors</span>
+                </div>
+                <h2 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                  Configuració del Sistema &gt; Gestió de Sensors
+                </h2>
+              </div>
+              <div>
+                <Button className="bg-cyan-600 text-white hover:bg-cyan-700">Afegir nou sensor</Button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg border overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[720px]">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left">ID</th>
+                      <th className="px-4 py-3 text-left">Nom</th>
+                      <th className="px-4 py-3 text-left">Ubicació</th>
+                      <th className="px-4 py-3 text-left">ESTAT</th>
+                      <th className="px-4 py-3 text-left">Última lectura</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sensorsTable.map((s) => (
+                      <tr key={s.id} className="border-t">
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.id}</td>
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.name}</td>
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.location}</td>
+                        <td className="px-4 py-3 text-sm">
+                          <span className={`px-2 py-1 rounded text-xs font-semibold ${s.status === 'Actiu' ? 'bg-green-100 text-green-800' : s.status === 'Manteniment' ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-700'}`}>
+                            {s.status}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.lastReading}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        ) : activeSection === "Localització de Fuites" ? (
           /* Localització de Fuites Content */
           <div>
             {/* Indicadors Section */}
