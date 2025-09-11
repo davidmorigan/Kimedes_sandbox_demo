@@ -1695,54 +1695,6 @@ export default function Dashboard() {
                 ))}
               </div>
 
-              {/* Cost Metrics */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                {costMetrics.map((metric, index) => (
-                  <Card
-                    key={index}
-                    className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-sm font-medium text-gray-700">
-                          {metric.title}
-                        </h3>
-                        <div className={`p-2 rounded-lg ${metric.iconBg}`}>
-                          <Droplets className="w-4 h-4 text-gray-600" />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <p className="text-2xl font-bold text-gray-900">
-                          {metric.value}
-                        </p>
-                        <div className="flex items-center text-sm">
-                          <span className={metric.title === "Aigua demandada" ? "text-green-600" : "text-red-600"}>
-                            + {metric.change}
-                          </span>
-                          <span className="text-gray-600 ml-1">respecte l'últim període</span>
-                        </div>
-
-                        {/* Small inline chart (same style as top metrics) */}
-                        <div className="flex items-end space-x-1 mt-4">
-                          {[...Array(8)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`w-2 rounded-sm ${
-                                metric.title.includes("Cost")
-                                  ? "bg-pink-400"
-                                  : metric.title.includes("Aigua perduda")
-                                  ? "bg-teal-400"
-                                  : "bg-orange-400"
-                              }`}
-                              style={{ height: `${Math.random() * 20 + 10}px` }}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
             </div>
 
             {/* Recommendations */}
