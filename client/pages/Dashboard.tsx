@@ -213,6 +213,8 @@ export default function Dashboard() {
     },
   ];
 
+  const visibleMetrics = activeSection === "Alertes" ? metrics.filter((m) => !["CO2 Emès","Eficiència de la xarxa","Aigua demandada"].includes(m.title)) : metrics;
+
   return (
     <div
       className={`min-h-screen flex ${isDarkMode ? "dark bg-gray-900" : "bg-gray-50"}`}
@@ -329,7 +331,15 @@ export default function Dashboard() {
                     }
                     setSidebarOpen(false); // Close mobile sidebar after selection
                   }}
-                  className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${isDarkMode ? "text-gray-300 hover:bg-gray-700" : "text-gray-700 hover:bg-gray-100"}`}
+                  className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors ${
+                    activeSection === item.label
+                      ? isDarkMode
+                        ? "bg-cyan-600 text-white"
+                        : "bg-gray-900 text-white"
+                      : isDarkMode
+                        ? "text-gray-300 hover:bg-gray-700"
+                        : "text-gray-700 hover:bg-gray-100"
+                  }`}
                 >
                   <item.icon className="w-4 h-4 mr-3" />
                   {item.label}
@@ -1679,7 +1689,7 @@ export default function Dashboard() {
 
               {/* Main Metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
-                {metrics.map((metric, index) => (
+                {visibleMetrics.map((metric, index) => (
                   <Card
                     key={index}
                     title={`Anar a ${metric.link}`}
