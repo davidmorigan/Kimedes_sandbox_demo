@@ -1839,65 +1839,123 @@ export default function Dashboard() {
 
               {/* Main Metrics */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
-                {visibleMetrics.map((metric, index) => (
-                  <Card
-                    key={index}
-                    title={`Anar a ${metric.link}`}
-                    className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}
-                    onClick={() => setActiveSection(metric.link)}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-sm font-medium text-gray-700">
-                          {metric.title}
-                        </h3>
-                        <div className={`p-2 rounded-lg ${metric.iconBg}`}>
-                          <metric.icon
-                            className={`w-4 h-4 ${metric.iconColor}`}
-                          />
+                {activeSection === "Alertes" ? (
+                  <>
+                    {/* Left - keep economic cost card (red/pink) */}
+                    <Card className="bg-pink-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm font-medium text-gray-700">Cost econòmic per fuites</h3>
+                          <div className="p-2 rounded-lg bg-pink-100">
+                            <FileText className="w-4 h-4 text-pink-600" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="space-y-2">
-                        <p className={`text-2xl font-bold ${metric.textColor}`}>
-                          {metric.value}
-                        </p>
-                        <div className="flex items-center text-sm">
-                          <span
-                            className={
-                              metric.title === "Total Fuites Actives" ||
-                              metric.title === "CO2 Emès"
-                                ? "text-green-600"
-                                : metric.trend === "up"
+                        <div className="space-y-2">
+                          <p className="text-2xl font-bold text-gray-900">€72k</p>
+                          <div className="flex items-center text-sm">
+                            <span className="text-red-600">+ 9.67%</span>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    {/* Middle - yellow: Sensors amb Incidencia */}
+                    <Card className="bg-yellow-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm font-medium text-gray-700">Sensors amb Incidencia</h3>
+                          <div className="p-2 rounded-lg bg-yellow-100">
+                            <Radio className="w-4 h-4 text-yellow-600" />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-2xl font-bold text-gray-900">1 sensor inactiu</p>
+                          <div className="flex items-center text-sm">
+                            <span className="text-yellow-700">Revisar incidències</span>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    {/* Right - green: Alerta de sequera */}
+                    <Card className="bg-emerald-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm font-medium text-gray-700">Alerta de sequera</h3>
+                          <div className="p-2 rounded-lg bg-emerald-100">
+                            <Droplets className="w-4 h-4 text-emerald-600" />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-2xl font-bold text-gray-900">Estat Baix</p>
+                          <div className="flex items-center text-sm">
+                            <span className="text-green-600">Mesures recomanades</span>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </>
+                ) : (
+                  visibleMetrics.map((metric, index) => (
+                    <Card
+                      key={index}
+                      title={`Anar a ${metric.link}`}
+                      className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}
+                      onClick={() => setActiveSection(metric.link)}
+                    >
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-sm font-medium text-gray-700">
+                            {metric.title}
+                          </h3>
+                          <div className={`p-2 rounded-lg ${metric.iconBg}`}>
+                            <metric.icon
+                              className={`w-4 h-4 ${metric.iconColor}`}
+                            />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <p className={`text-2xl font-bold ${metric.textColor}`}>
+                            {metric.value}
+                          </p>
+                          <div className="flex items-center text-sm">
+                            <span
+                              className={
+                                metric.title === "Total Fuites Actives" ||
+                                metric.title === "CO2 Emès"
                                   ? "text-green-600"
-                                  : "text-red-600"
-                            }
-                          >
-                            {metric.trend === "up" ? "+" : "-"} {metric.change}
-                          </span>
-                          <span className="text-gray-600 ml-1">
-                            respecte l'últim període
-                          </span>
+                                  : metric.trend === "up"
+                                    ? "text-green-600"
+                                    : "text-red-600"
+                              }
+                            >
+                              {metric.trend === "up" ? "+" : "-"} {metric.change}
+                            </span>
+                            <span className="text-gray-600 ml-1">
+                              respecte l'últim període
+                            </span>
+                          </div>
+                          {/* Simple chart representation */}
+                          <div className="flex items-end space-x-1 mt-4">
+                            {[...Array(8)].map((_, i) => (
+                              <div
+                                key={i}
+                                className={`w-2 rounded-sm ${
+                                  metric.title.includes("Actives")
+                                    ? "bg-red-400"
+                                    : metric.title.includes("CO2")
+                                      ? "bg-teal-400"
+                                      : "bg-purple-400"
+                                }`}
+                                style={{ height: `${Math.random() * 20 + 10}px` }}
+                              ></div>
+                            ))}
+                          </div>
                         </div>
-                        {/* Simple chart representation */}
-                        <div className="flex items-end space-x-1 mt-4">
-                          {[...Array(8)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`w-2 rounded-sm ${
-                                metric.title.includes("Actives")
-                                  ? "bg-red-400"
-                                  : metric.title.includes("CO2")
-                                    ? "bg-teal-400"
-                                    : "bg-purple-400"
-                              }`}
-                              style={{ height: `${Math.random() * 20 + 10}px` }}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  ))
+                )}
               </div>
 
             </div>
