@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -491,8 +491,8 @@ export default function Dashboard() {
                   </thead>
                   <tbody>
                     {sensorsTable.map((s) => (
-                      <>
-                        <tr key={s.id} className="border-t">
+                      <React.Fragment key={s.id}>
+                        <tr className="border-t">
                           <td className="px-4 py-3 text-sm text-gray-700">{s.id}</td>
                           <td className="px-4 py-3 text-sm text-gray-700">{s.name}</td>
                           <td className="px-4 py-3 text-sm text-gray-700">{s.location}</td>
@@ -552,7 +552,7 @@ export default function Dashboard() {
                             </td>
                           </tr>
                         )}
-                      </>
+                      </React.Fragment>
                     ))}
                   </tbody>
                 </table>
