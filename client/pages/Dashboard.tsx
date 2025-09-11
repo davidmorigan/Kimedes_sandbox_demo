@@ -139,7 +139,7 @@ export default function Dashboard() {
   const costMetrics = [
     {
       title: "Cost econòmic per fuites",
-      value: "$72K",
+      value: "€72K",
       change: "9.67%",
       color: "bg-pink-100",
       iconBg: "bg-pink-100",
@@ -1679,15 +1679,26 @@ export default function Dashboard() {
                           {metric.value}
                         </p>
                         <div className="flex items-center text-sm">
-                          <span
-                            className={
-                              metric.title === "Aigua demandada"
-                                ? "text-green-600"
-                                : "text-red-600"
-                            }
-                          >
+                          <span className={metric.title === "Aigua demandada" ? "text-green-600" : "text-red-600"}>
                             + {metric.change}
                           </span>
+                        </div>
+
+                        {/* Ascending column chart */}
+                        <div className="flex items-end space-x-1 mt-4 h-24">
+                          {[20,40,60,80,110,140,170,200].map((h, i) => (
+                            <div
+                              key={i}
+                              className={`w-2 rounded-sm ${
+                                metric.title.includes("Cost")
+                                  ? "bg-pink-400"
+                                  : metric.title.includes("Aigua perduda")
+                                  ? "bg-teal-400"
+                                  : "bg-orange-400"
+                              }`}
+                              style={{ height: `${h}px` }}
+                            ></div>
+                          ))}
                         </div>
                       </div>
                     </CardContent>
@@ -1698,38 +1709,31 @@ export default function Dashboard() {
 
             {/* Recommendations */}
             <div>
-              <h2
-                className={`text-lg font-semibold mb-4 ${isDarkMode ? "text-white" : "text-gray-900"}`}
-              >
+              <h2 className={isDarkMode ? "text-lg font-semibold mb-4 text-white" : "text-lg font-semibold mb-4 text-gray-900"}>
                 Recomanacions
               </h2>
-              <p
-                className={`text-sm mb-4 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
-              >
+              <p className={isDarkMode ? "text-sm mb-4 text-gray-300" : "text-sm mb-4 text-gray-600"}>
                 Aquí tens les 3 recomanacions del dia.
               </p>
 
+              <div className={isDarkMode ? "border-t border-gray-700 mt-4 mb-4" : "border-t border-gray-200 mt-4 mb-4"}></div>
+
               <div className="space-y-3">
                 {recommendations.map((rec, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span
-                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
-                    >
-                      Tens
-                    </span>
-                    <span
-                      className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
-                    >
-                      {rec.text.split("Tens ")[1].split(".")[0]}.
-                    </span>
-                    <Button
-                      variant="link"
-                      className={`p-0 h-auto text-sm ${isDarkMode ? "text-blue-400 hover:text-blue-300" : "text-blue-600 hover:text-blue-700"}`}
-                    >
-                      {rec.action}
-                    </Button>
-                  </div>
+                  <Card key={index} className="bg-white border-0 shadow-sm">
+                    <CardContent className="p-4 flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                        <div>
+                          <div className={isDarkMode ? "text-sm text-gray-300" : "text-sm text-gray-700"}>Tens</div>
+                          <div className={isDarkMode ? "font-semibold text-white" : "font-semibold text-gray-900"}>{rec.text.split("Tens ")[1].split(".")[0]}.</div>
+                        </div>
+                      </div>
+                      <div>
+                        <Button className="bg-blue-600 text-white hover:bg-blue-700">REVISAR</Button>
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
