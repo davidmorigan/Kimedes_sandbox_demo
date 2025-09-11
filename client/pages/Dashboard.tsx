@@ -43,6 +43,7 @@ import {
   Book,
   Layout,
   Euro,
+  Download,
 } from "lucide-react";
 
 export default function Dashboard() {
