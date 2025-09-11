@@ -947,7 +947,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800" : "bg-white"}`}
                   onClick={() => setActiveSection("Informes de Fraus")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-orange-100 rounded-lg mr-4">
                         <ShieldAlert className="w-6 h-6 text-orange-600" />
@@ -976,9 +977,12 @@ export default function Dashboard() {
 
               {/* Analítica section title + filters */}
               <div className="mb-8">
-                <h2 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
-                  Analítica
-                </h2>
+                <div className="flex items-center gap-2">
+                  <h2 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                    Analítica
+                  </h2>
+                  <span className="inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
+                </div>
 
                 <div className={`mt-4 p-4 rounded-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} border ${isDarkMode ? "border-gray-700" : "border-gray-200"}`}>
                   <div className="flex flex-wrap items-center gap-3">
