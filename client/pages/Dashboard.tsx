@@ -1684,9 +1684,9 @@ export default function Dashboard() {
                           </span>
                         </div>
 
-                        {/* Ascending column chart */}
-                        <div className="flex items-end space-x-1 mt-4 h-24">
-                          {[20,40,60,80,110,140,170,200].map((h, i) => (
+                        {/* Small inline chart (same style as top metrics) */}
+                        <div className="flex items-end space-x-1 mt-4">
+                          {[...Array(8)].map((_, i) => (
                             <div
                               key={i}
                               className={`w-2 rounded-sm ${
@@ -1696,7 +1696,7 @@ export default function Dashboard() {
                                   ? "bg-teal-400"
                                   : "bg-orange-400"
                               }`}
-                              style={{ height: `${h}px` }}
+                              style={{ height: `${Math.random() * 20 + 10}px` }}
                             ></div>
                           ))}
                         </div>
