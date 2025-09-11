@@ -227,13 +227,19 @@ export default function Dashboard() {
     },
   ];
 
-  const sensorsTable = Array.from({ length: 10 }).map((_, i) => ({
-    id: `S-${1000 + i}`,
-    name: `Sensor ${i + 1}`,
-    location: `Zona ${String.fromCharCode(65 + (i % 6))}`,
-    status: i % 3 === 0 ? "Actiu" : i % 3 === 1 ? "Manteniment" : "Inactiu",
-    lastReading: `${Math.floor(Math.random() * 100)} m³`
-  }));
+  const sensorsTable = Array.from({ length: 11 }).map((_, i) => {
+    const id = `S-${1000 + i}`;
+    const isIncident = i === 10; // last sensor is incident
+    return {
+      id,
+      name: `Sensor ${i + 1}`,
+      location: `Zona ${String.fromCharCode(65 + (i % 6))}`,
+      status: isIncident ? "Incidencia" : "Actiu",
+      pressure: `${(Math.random() * 5 + 1).toFixed(2)} bar`,
+      lastReadingTime: new Date(Date.now() - Math.floor(Math.random() * 6 * 60 * 60 * 1000)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      readings24h: Math.floor(Math.random() * 200)
+    };
+  });
 
   const visibleMetrics = activeSection === "Alertes" ? metrics.filter((m) => !["CO2 Emès","Eficiència de la xarxa","Aigua demandada"].includes(m.title)) : metrics;
 
@@ -476,7 +482,9 @@ export default function Dashboard() {
                       <th className="px-4 py-3 text-left">Nom</th>
                       <th className="px-4 py-3 text-left">Ubicació</th>
                       <th className="px-4 py-3 text-left">ESTAT</th>
-                      <th className="px-4 py-3 text-left">Última lectura</th>
+                      <th className="px-4 py-3 text-left">Pressió</th>
+                      <th className="px-4 py-3 text-left">Hora lectura</th>
+                      <th className="px-4 py-3 text-left">Lectures 24h</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -485,12 +493,17 @@ export default function Dashboard() {
                         <td className="px-4 py-3 text-sm text-gray-700">{s.id}</td>
                         <td className="px-4 py-3 text-sm text-gray-700">{s.name}</td>
                         <td className="px-4 py-3 text-sm text-gray-700">{s.location}</td>
-                        <td className="px-4 py-3 text-sm">
-                          <span className={`px-2 py-1 rounded text-xs font-semibold ${s.status === 'Actiu' ? 'bg-green-100 text-green-800' : s.status === 'Manteniment' ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-700'}`}>
+                        <td className="px-4 py-3 text-sm flex items-center">
+                          <span className={`inline-flex items-center mr-2`}>
+                            <span className={`w-3 h-3 rounded-full ${s.status === 'Actiu' ? 'bg-green-500 animate-pulse' : s.status === 'Incidencia' ? 'bg-red-500 animate-pulse' : 'bg-gray-300'}`} />
+                          </span>
+                          <span className={`px-2 py-1 rounded text-xs font-semibold ${s.status === 'Actiu' ? 'bg-green-100 text-green-800' : s.status === 'Incidencia' ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-700'}`}>
                             {s.status}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.lastReading}</td>
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.pressure}</td>
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.lastReadingTime}</td>
+                        <td className="px-4 py-3 text-sm text-gray-700">{s.readings24h}</td>
                       </tr>
                     ))}
                   </tbody>
