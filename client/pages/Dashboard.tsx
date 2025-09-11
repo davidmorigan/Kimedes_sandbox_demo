@@ -1755,10 +1755,10 @@ export default function Dashboard() {
             {/* Recommendations */}
             <div>
               <h2 className={isDarkMode ? "text-lg font-semibold mb-4 text-white" : "text-lg font-semibold mb-4 text-gray-900"}>
-                Recomanacions
+                {activeSection === "Alertes" ? "Llistat d'alertes autonòmiques i estatals." : "Recomanacions"}
               </h2>
               <p className={isDarkMode ? "text-sm mb-4 text-gray-300" : "text-sm mb-4 text-gray-600"}>
-                Aquí tens les 3 recomanacions del dia.
+                {activeSection === "Alertes" ? "Última alerta o normativa." : "Aquí tens les 3 recomanacions del dia."}
               </p>
 
               <div className={isDarkMode ? "border-t border-gray-700 mt-4 mb-4" : "border-t border-gray-200 mt-4 mb-4"}></div>
