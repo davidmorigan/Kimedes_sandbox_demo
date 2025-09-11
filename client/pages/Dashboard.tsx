@@ -486,26 +486,73 @@ export default function Dashboard() {
                       <th className="px-4 py-3 text-left">Pressió</th>
                       <th className="px-4 py-3 text-left">Hora lectura</th>
                       <th className="px-4 py-3 text-left">Lectures 24h</th>
+                      <th className="px-4 py-3 text-left">Accions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {sensorsTable.map((s) => (
-                      <tr key={s.id} className="border-t">
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.id}</td>
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.name}</td>
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.location}</td>
-                        <td className="px-4 py-3 text-sm flex items-center">
-                          <span className={`inline-flex items-center mr-2`}>
-                            <span className={`w-3 h-3 rounded-full ${s.status === 'Actiu' ? 'bg-green-500 animate-pulse' : s.status === 'Incidencia' ? 'bg-red-500 animate-pulse' : 'bg-gray-300'}`} />
-                          </span>
-                          <span className={`px-2 py-1 rounded text-xs font-semibold ${s.status === 'Actiu' ? 'bg-green-100 text-green-800' : s.status === 'Incidencia' ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-700'}`}>
-                            {s.status}
-                          </span>
-                        </td>
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.pressure}</td>
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.lastReadingTime}</td>
-                        <td className="px-4 py-3 text-sm text-gray-700">{s.readings24h}</td>
-                      </tr>
+                      <>
+                        <tr key={s.id} className="border-t">
+                          <td className="px-4 py-3 text-sm text-gray-700">{s.id}</td>
+                          <td className="px-4 py-3 text-sm text-gray-700">{s.name}</td>
+                          <td className="px-4 py-3 text-sm text-gray-700">{s.location}</td>
+                          <td className="px-4 py-3 text-sm flex items-center">
+                            <span className={`inline-flex items-center mr-2`}>
+                              <span className={`w-3 h-3 rounded-full ${s.status === 'Actiu' ? 'bg-green-500 animate-pulse' : s.status === 'Incidencia' ? 'bg-red-500 animate-pulse' : 'bg-gray-300'}`} />
+                            </span>
+                            <span className={`px-2 py-1 rounded text-xs font-semibold ${s.status === 'Actiu' ? 'bg-green-100 text-green-800' : s.status === 'Incidencia' ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-700'}`}>
+                              {s.status}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3 text-sm text-gray-700">{s.pressure}</td>
+                          <td className="px-4 py-3 text-sm text-gray-700">{s.lastReadingTime}</td>
+                          <td className="px-4 py-3 text-sm text-gray-700">{s.readings24h}</td>
+                          <td className="px-4 py-3 text-sm text-right">
+                            <Button size="sm" variant="outline" onClick={() => setExpandedRow(expandedRow === s.id ? null : s.id)}>
+                              Veure detalls
+                            </Button>
+                          </td>
+                        </tr>
+
+                        {expandedRow === s.id && (
+                          <tr className="bg-gray-50">
+                            <td colSpan={8} className="p-4">
+                              <div className="w-full h-40">
+                                {/* Simple SVG trend chart */}
+                                {(() => {
+                                  const values = Array.from({ length: 20 }).map(() => 3 + Math.random() * 3);
+                                  const width = 800;
+                                  const height = 150;
+                                  const min = 3;
+                                  const max = 6;
+                                  const points = values.map((v, i) => {
+                                    const x = (i / (values.length - 1)) * width;
+                                    const y = ((max - v) / (max - min)) * (height - 20) + 10;
+                                    return `${x},${y}`;
+                                  });
+                                  const pathD = values.map((v, i) => {
+                                    const x = (i / (values.length - 1)) * width;
+                                    const y = ((max - v) / (max - min)) * (height - 20) + 10;
+                                    return `${i === 0 ? 'M' : 'L'} ${x} ${y}`;
+                                  }).join(' ');
+                                  const areaD = `M 0 ${height} L ${points.join(' L ')} L ${width} ${height} Z`;
+                                  return (
+                                    <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" className="w-full h-full">
+                                      <path d={areaD} fill="rgba(6,95,70,0.06)" />
+                                      <path d={pathD} stroke="#059669" strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                      {values.map((v, i) => {
+                                        const x = (i / (values.length - 1)) * width;
+                                        const y = ((max - v) / (max - min)) * (height - 20) + 10;
+                                        return <circle key={i} cx={x} cy={y} r={2} fill="#059669" />;
+                                      })}
+                                    </svg>
+                                  );
+                                })()}
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </>
                     ))}
                   </tbody>
                 </table>
