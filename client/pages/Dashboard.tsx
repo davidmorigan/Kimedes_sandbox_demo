@@ -1765,7 +1765,7 @@ export default function Dashboard() {
                         </div>
                       </div>
                       <div>
-                        <Button className="bg-cyan-500 text-white hover:bg-cyan-600">REVISAR</Button>
+                        <Button onClick={() => setActiveSection("Detecció de Fuites")} className="bg-cyan-500 text-white hover:bg-cyan-600">REVISAR</Button>
                       </div>
                     </CardContent>
                   </Card>
