@@ -27,6 +27,14 @@ export default function Login() {
               <div className="w-3 h-8 bg-cyan-400 rounded mr-2"></div>
               <h1 className="text-2xl font-bold text-gray-900">Kimedes</h1>
             </div>
+            <div className="mt-3">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fdf3f3d3970e74863b41ea70849fd03e0?format=webp&width=800"
+                alt="Ajuntament logo"
+                className="h-10 w-auto"
+                loading="lazy"
+              />
+            </div>
             <p className="text-sm text-gray-600">Leak Solution</p>
             <p className="text-sm text-gray-600">Sustainable Revolution</p>
           </div>
