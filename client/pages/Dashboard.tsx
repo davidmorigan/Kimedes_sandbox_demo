@@ -1256,7 +1256,8 @@ export default function Dashboard() {
                     handleConfigurationSection("Configurar Usuari")
                   }
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-blue-100 rounded-lg mr-4">
                         <User className="w-6 h-6 text-blue-600" />
@@ -1283,7 +1284,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => handleConfigurationSection("Roles i Permisos")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-purple-100 rounded-lg mr-4">
                         <Shield className="w-6 h-6 text-purple-600" />
@@ -1310,7 +1312,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => handleConfigurationSection("Automatitzacions")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-yellow-100 rounded-lg mr-4">
                         <Zap className="w-6 h-6 text-yellow-600" />
@@ -1339,7 +1342,8 @@ export default function Dashboard() {
                     handleConfigurationSection("Configurar Alertes")
                   }
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-red-100 rounded-lg mr-4">
                         <Bell className="w-6 h-6 text-red-600" />
@@ -1366,7 +1370,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => handleConfigurationSection("Documentació API")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-green-100 rounded-lg mr-4">
                         <Book className="w-6 h-6 text-green-600" />
@@ -1393,7 +1398,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => handleConfigurationSection("Integracions")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-amber-100 rounded-lg mr-4">
                         <Plug className="w-6 h-6 text-amber-600" />
@@ -1421,7 +1427,8 @@ export default function Dashboard() {
                     handleConfigurationSection("Registre d'Activitats")
                   }
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-sky-100 rounded-lg mr-4">
                         <ScrollText className="w-6 h-6 text-sky-600" />
@@ -1449,7 +1456,8 @@ export default function Dashboard() {
                     handleConfigurationSection("Gestió de Sensors")
                   }
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-emerald-100 rounded-lg mr-4">
                         <Radio className="w-6 h-6 text-emerald-600" />
@@ -1475,7 +1483,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => setActiveSection("Notificacions")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-red-100 rounded-lg mr-4">
                         <Bell className="w-6 h-6 text-red-600" />
@@ -1501,7 +1510,8 @@ export default function Dashboard() {
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => handleConfigurationSection("Layout")}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-indigo-100 rounded-lg mr-4">
                         <Layout className="w-6 h-6 text-indigo-600" />
