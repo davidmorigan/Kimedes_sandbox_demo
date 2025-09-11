@@ -1504,6 +1504,60 @@ export default function Dashboard() {
                     </p>
                   </CardContent>
                 </Card>
+
+                {/* 10 - Contactar a Suport */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Contactar a Suport")}
+                >
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-cyan-100 rounded-lg mr-4">
+                        <Mail className="w-6 h-6 text-cyan-600" />
+                      </div>
+                      <div>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Contactar a Suport
+                        </h3>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Obre un tiquet o envia un correu al nostre equip de suport.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* 11 - Dades de Facturació */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Dades de Facturació")}
+                >
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-emerald-100 rounded-lg mr-4">
+                        <FileText className="w-6 h-6 text-emerald-600" />
+                      </div>
+                      <div>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Dades de Facturació
+                        </h3>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Gestiona la informació de facturació i el teu pla.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
