@@ -1281,7 +1281,7 @@ export default function Dashboard() {
                 {/* 2 - Layout */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Layout")}
+                  onClick={() => setShowModal(true)}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
@@ -1309,7 +1309,7 @@ export default function Dashboard() {
                 {/* 3 - Roles i Permisos */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Roles i Permisos")}
+                  onClick={() => setShowModal(true)}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
@@ -1420,7 +1420,7 @@ export default function Dashboard() {
                 {/* 7 - Automatitzacions */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Automatitzacions")}
+                  onClick={() => setShowModal(true)}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
@@ -1448,7 +1448,7 @@ export default function Dashboard() {
                 {/* 8 - Integracions */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Integracions")}
+                  onClick={() => setShowModal(true)}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
@@ -1475,9 +1475,7 @@ export default function Dashboard() {
                 {/* 9 - Registre d'Activitats */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() =>
-                    handleConfigurationSection("Registre d'Activitats")
-                  }
+                  onClick={() => setShowModal(true)}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
