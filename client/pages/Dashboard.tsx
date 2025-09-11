@@ -1249,7 +1249,7 @@ export default function Dashboard() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Configurar Usuari */}
+                {/* 1 - Configurar Usuari */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() =>
@@ -1279,7 +1279,35 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Configurar roles i permisos */}
+                {/* 2 - Layout */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Layout")}
+                >
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-indigo-100 rounded-lg mr-4">
+                        <Layout className="w-6 h-6 text-indigo-600" />
+                      </div>
+                      <div>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Layout
+                        </h3>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Personalitza l'aparença de la interfície, temes i
+                      disposició dels elements.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* 3 - Roles i Permisos */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() => handleConfigurationSection("Roles i Permisos")}
@@ -1307,35 +1335,7 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Automatitzacions */}
-                <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Automatitzacions")}
-                >
-                  <CardContent className="p-6 relative">
-                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-yellow-100 rounded-lg mr-4">
-                        <Zap className="w-6 h-6 text-yellow-600" />
-                      </div>
-                      <div>
-                        <h3
-                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
-                        >
-                          Automatitzacions
-                        </h3>
-                      </div>
-                    </div>
-                    <p
-                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
-                    >
-                      Configura processos automàtics, workflows i accions
-                      programades del sistema.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* Configurar alertes */}
+                {/* 4 - Configurar Alertes */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() =>
@@ -1365,91 +1365,34 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Documentació API */}
+                {/* 5 - Notificacions */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Documentació API")}
+                  onClick={() => setActiveSection("Notificacions")}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
-                      <div className="p-3 bg-green-100 rounded-lg mr-4">
-                        <Book className="w-6 h-6 text-green-600" />
+                      <div className="p-3 bg-red-100 rounded-lg mr-4">
+                        <Bell className="w-6 h-6 text-red-600" />
                       </div>
                       <div>
                         <h3
                           className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
                         >
-                          Documentació API
+                          Notificacions
                         </h3>
                       </div>
                     </div>
                     <p
                       className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
                     >
-                      Accedeix a la documentació completa de l'API i guies
-                      d'integració.
+                      Configura canals i preferències de notificacions.
                     </p>
                   </CardContent>
                 </Card>
 
-                {/* Integracions */}
-                <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Integracions")}
-                >
-                  <CardContent className="p-6 relative">
-                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-amber-100 rounded-lg mr-4">
-                        <Plug className="w-6 h-6 text-amber-600" />
-                      </div>
-                      <div>
-                        <h3
-                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
-                        >
-                          Integracions
-                        </h3>
-                      </div>
-                    </div>
-                    <p
-                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
-                    >
-                      Connecta i configura integracions externes.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* Registre d'Activitats */}
-                <Card
-                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() =>
-                    handleConfigurationSection("Registre d'Activitats")
-                  }
-                >
-                  <CardContent className="p-6 relative">
-                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-sky-100 rounded-lg mr-4">
-                        <ScrollText className="w-6 h-6 text-sky-600" />
-                      </div>
-                      <div>
-                        <h3
-                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
-                        >
-                          Registre d'Activitats
-                        </h3>
-                      </div>
-                    </div>
-                    <p
-                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
-                    >
-                      Consulta l'històric d'activitats del sistema.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* Gestió de Sensors */}
+                {/* 6 - Gestió de Sensors */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
                   onClick={() =>
@@ -1478,57 +1421,86 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
 
-                {/* Notificacions */}
+                {/* 7 - Automatitzacions */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => setActiveSection("Notificacions")}
+                  onClick={() => handleConfigurationSection("Automatitzacions")}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
-                      <div className="p-3 bg-red-100 rounded-lg mr-4">
-                        <Bell className="w-6 h-6 text-red-600" />
+                      <div className="p-3 bg-yellow-100 rounded-lg mr-4">
+                        <Zap className="w-6 h-6 text-yellow-600" />
                       </div>
                       <div>
                         <h3
                           className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
                         >
-                          Notificacions
+                          Automatitzacions
                         </h3>
                       </div>
                     </div>
                     <p
                       className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
                     >
-                      Configura canals i preferències de notificacions.
+                      Configura processos automàtics, workflows i accions
+                      programades del sistema.
                     </p>
                   </CardContent>
                 </Card>
 
-                {/* Layout */}
+                {/* 8 - Integracions */}
                 <Card
                   className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
-                  onClick={() => handleConfigurationSection("Layout")}
+                  onClick={() => handleConfigurationSection("Integracions")}
                 >
                   <CardContent className="p-6 relative">
                     <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
                     <div className="flex items-center mb-4">
-                      <div className="p-3 bg-indigo-100 rounded-lg mr-4">
-                        <Layout className="w-6 h-6 text-indigo-600" />
+                      <div className="p-3 bg-amber-100 rounded-lg mr-4">
+                        <Plug className="w-6 h-6 text-amber-600" />
                       </div>
                       <div>
                         <h3
                           className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
                         >
-                          Layout
+                          Integracions
                         </h3>
                       </div>
                     </div>
                     <p
                       className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
                     >
-                      Personalitza l'aparença de la interfície, temes i
-                      disposició dels elements.
+                      Connecta i configura integracions externes.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* 9 - Registre d'Activitats */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() =>
+                    handleConfigurationSection("Registre d'Activitats")
+                  }
+                >
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-sky-100 rounded-lg mr-4">
+                        <ScrollText className="w-6 h-6 text-sky-600" />
+                      </div>
+                      <div>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Registre d'Activitats
+                        </h3>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Consulta l'històric d'activitats del sistema.
                     </p>
                   </CardContent>
                 </Card>
