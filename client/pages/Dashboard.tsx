@@ -1895,7 +1895,7 @@ export default function Dashboard() {
                         <div className="space-y-2">
                           <p className="text-2xl font-bold text-gray-900">Estat Baix</p>
                           <div className="flex items-center text-sm">
-                            <span className="text-green-600">La previsió de sequera pels pr`pxims 3 mesos es baixa i impacte baix.</span>
+                            <span className="text-green-600">La previsió de sequera pels pròxims 3 mesos és baixa i l'impacte baix.</span>
                           </div>
                           <div className="mt-3">
                             <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Mesures recomanades</Button>
