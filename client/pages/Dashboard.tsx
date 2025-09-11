@@ -1841,19 +1841,22 @@ export default function Dashboard() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
                 {activeSection === "Alertes" ? (
                   <>
-                    {/* Left - keep economic cost card (red/pink) */}
+                    {/* Left - Impacte Fuites Actives */}
                     <Card className="bg-pink-100 border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer">
                       <CardContent className="p-6">
                         <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-sm font-medium text-gray-700">Cost econòmic per fuites</h3>
+                          <h3 className="text-sm font-medium text-gray-700">Impacte Fuites Actives</h3>
                           <div className="p-2 rounded-lg bg-pink-100">
                             <FileText className="w-4 h-4 text-pink-600" />
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-2xl font-bold text-gray-900">€72k</p>
-                          <div className="flex items-center text-sm">
-                            <span className="text-red-600">+ 9.67%</span>
+                          <p className="text-2xl font-bold text-gray-900">23 actives + 3 Noves</p>
+                          <div className="text-sm text-gray-600">
+                            L'impacte econòmic de les fuites acumulades afectarà al pressupost anual
+                          </div>
+                          <div className="mt-3">
+                            <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Revisar recomanacions</Button>
                           </div>
                         </div>
                       </CardContent>
