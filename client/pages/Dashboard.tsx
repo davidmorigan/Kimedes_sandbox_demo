@@ -1897,6 +1897,9 @@ export default function Dashboard() {
                           <div className="flex items-center text-sm">
                             <span className="text-green-600">Mesures recomanades</span>
                           </div>
+                          <div className="mt-3">
+                            <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Mesures recomanades</Button>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
