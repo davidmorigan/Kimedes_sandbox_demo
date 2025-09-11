@@ -231,7 +231,7 @@ export default function Dashboard() {
               </button>
             </div>
           </div>
-          <div className="mt-3 flex justify-center">
+          <div className={`mt-3 flex justify-center ${isDarkMode ? "border-t border-gray-700 pt-3" : "border-t border-gray-200 pt-3"}`}>
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fdf3f3d3970e74863b41ea70849fd03e0?format=webp&width=800"
               alt="Ajuntament logo"
@@ -343,7 +343,7 @@ export default function Dashboard() {
           </button>
           <div className="w-10"></div> {/* Spacer for centering */}
         </div>
-        <div className="lg:hidden -mt-5 mb-6 flex justify-center">
+        <div className={`lg:hidden -mt-5 mb-6 flex justify-center ${isDarkMode ? "border-t border-gray-700 pt-3" : "border-t border-gray-200 pt-3"}`}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fdf3f3d3970e74863b41ea70849fd03e0?format=webp&width=800"
             alt="Ajuntament logo"
