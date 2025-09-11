@@ -973,6 +973,32 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
               </div>
+
+              {/* Analítica section title + filters */}
+              <div className="mb-8">
+                <h2 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                  Analítica
+                </h2>
+
+                <div className={`mt-4 p-4 rounded-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} border ${isDarkMode ? "border-gray-700" : "border-gray-200"}`}>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Input placeholder="Cercar informe, mètrica o etiqueta..." className="max-w-sm" />
+                    <select className={`h-10 px-3 rounded border ${isDarkMode ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-700"}`}>
+                      <option>Tipus d'informe</option>
+                      <option>Cost</option>
+                      <option>Consum</option>
+                      <option>Emissions</option>
+                    </select>
+                    <select className={`h-10 px-3 rounded border ${isDarkMode ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-700"}`}>
+                      <option>Període</option>
+                      <option>Últim mes</option>
+                      <option>Últims 3 mesos</option>
+                      <option>Últim any</option>
+                    </select>
+                    <Button className="ml-auto bg-cyan-500 text-white hover:bg-cyan-600">Aplicar</Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         ) : activeSection === "Notificacions" ? (
