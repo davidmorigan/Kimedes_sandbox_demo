@@ -1682,6 +1682,7 @@ export default function Dashboard() {
                           <span className={metric.title === "Aigua demandada" ? "text-green-600" : "text-red-600"}>
                             + {metric.change}
                           </span>
+                          <span className="text-gray-600 ml-1">respecte l'últim període</span>
                         </div>
 
                         {/* Small inline chart (same style as top metrics) */}
@@ -1730,7 +1731,7 @@ export default function Dashboard() {
                         </div>
                       </div>
                       <div>
-                        <Button className="bg-blue-600 text-white hover:bg-blue-700">REVISAR</Button>
+                        <Button className="bg-cyan-500 text-white hover:bg-cyan-600">REVISAR</Button>
                       </div>
                     </CardContent>
                   </Card>
