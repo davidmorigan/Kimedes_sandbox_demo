@@ -1490,6 +1490,7 @@ export default function Dashboard() {
                   }
                 >
                   <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-green-100 text-green-800">En progrés</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-blue-100 rounded-lg mr-4">
                         <User className="w-6 h-6 text-blue-600" />
@@ -1575,6 +1576,7 @@ export default function Dashboard() {
                   }
                 >
                   <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-green-100 text-green-800">En progrés</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-red-100 rounded-lg mr-4">
                         <Bell className="w-6 h-6 text-red-600" />
@@ -1764,6 +1766,7 @@ export default function Dashboard() {
                   onClick={() => handleConfigurationSection("Dades de Facturació")}
                 >
                   <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-green-100 text-green-800">En progrés</span>
                     <div className="flex items-center mb-4">
                       <div className="p-3 bg-emerald-100 rounded-lg mr-4">
                         <FileText className="w-6 h-6 text-emerald-600" />
