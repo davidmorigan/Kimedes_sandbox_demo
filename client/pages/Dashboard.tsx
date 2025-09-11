@@ -1600,12 +1600,9 @@ export default function Dashboard() {
                 {metrics.map((metric, index) => (
                   <Card
                     key={index}
+                    title={`Anar a ${metric.link}`}
                     className={`${metric.color} border-0 transition-all duration-300 ease-in-out hover:transform hover:-translate-y-2 hover:shadow-lg cursor-pointer`}
-                    onClick={() => {
-                      if (metric.title === "Total Fuites Actives") {
-                        setActiveSection("Detecció de Fuites");
-                      }
-                    }}
+                    onClick={() => setActiveSection(metric.link)}
                   >
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
