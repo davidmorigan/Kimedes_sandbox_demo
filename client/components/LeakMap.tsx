@@ -48,17 +48,19 @@ const LeakMap = () => {
   ];
 
   return (
-    <div className="relative h-96 w-full bg-gray-100 rounded-lg overflow-hidden">
+    <div className="relative h-[520px] w-full bg-gray-100 rounded-lg overflow-hidden">
       {/* Map Background with street pattern */}
       <div
         className="absolute inset-0 bg-gray-200 transition-transform duration-200"
         style={{
           transform: `scale(${zoom / 100})`,
-          backgroundImage: `
+          backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F2c67235e89da47a08ac7ae4f24de0075?format=webp&width=800'),
             linear-gradient(to right, #e5e7eb 1px, transparent 1px),
             linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)
           `,
-          backgroundSize: "20px 20px",
+          backgroundSize: "cover, 20px 20px",
+          backgroundPosition: "center, 0 0",
+          backgroundRepeat: "no-repeat, repeat",
         }}
       >
         {/* Water pipes */}
