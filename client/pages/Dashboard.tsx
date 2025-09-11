@@ -231,6 +231,14 @@ export default function Dashboard() {
               </button>
             </div>
           </div>
+          <div className="mt-3 flex justify-center">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fdf3f3d3970e74863b41ea70849fd03e0?format=webp&width=800"
+              alt="Ajuntament logo"
+              className="h-10 w-auto"
+              loading="lazy"
+            />
+          </div>
         </div>
         <div className="p-4">
           <nav className="space-y-2">
@@ -334,6 +342,14 @@ export default function Dashboard() {
             </h1>
           </button>
           <div className="w-10"></div> {/* Spacer for centering */}
+        </div>
+        <div className="lg:hidden -mt-5 mb-6 flex justify-center">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2Fdf3f3d3970e74863b41ea70849fd03e0?format=webp&width=800"
+            alt="Ajuntament logo"
+            className="h-8 w-auto"
+            loading="lazy"
+          />
         </div>
 
         {/* Header */}
