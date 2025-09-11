@@ -847,7 +847,7 @@ export default function Dashboard() {
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">
-                  Informes i Analítica
+                  Informes
                 </h2>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <span>Mes en curs</span>
