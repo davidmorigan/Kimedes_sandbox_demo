@@ -1876,6 +1876,9 @@ export default function Dashboard() {
                           <div className="flex items-center text-sm">
                             <span className="text-yellow-700">Revisar incidències</span>
                           </div>
+                          <div className="mt-3">
+                            <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Resoldre Incidencia</Button>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
