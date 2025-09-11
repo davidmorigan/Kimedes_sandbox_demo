@@ -42,6 +42,7 @@ import {
   Settings2,
   Book,
   Layout,
+  Euro,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -106,11 +107,35 @@ export default function Dashboard() {
       value: "# 23",
       change: "5.39%",
       trend: "down",
-      color: "bg-cyan-100",
-      textColor: "text-cyan-900",
+      color: "bg-pink-100",
+      textColor: "text-pink-900",
       icon: TrendingDown,
       iconBg: "bg-red-100",
       iconColor: "text-red-600",
+      link: "Detecció de Fuites",
+    },
+    {
+      title: "Cost econòmic per fuites",
+      value: "€72K",
+      change: "9.67%",
+      trend: "up",
+      color: "bg-pink-100",
+      textColor: "text-pink-900",
+      icon: Euro,
+      iconBg: "bg-pink-100",
+      iconColor: "text-pink-600",
+      link: "Detecció de Fuites",
+    },
+    {
+      title: "Aigua perduda",
+      value: "200 M3",
+      change: "7.36%",
+      trend: "up",
+      color: "bg-sky-100",
+      textColor: "text-sky-900",
+      icon: Droplets,
+      iconBg: "bg-sky-100",
+      iconColor: "text-sky-600",
       link: "Detecció de Fuites",
     },
     {
@@ -137,6 +162,18 @@ export default function Dashboard() {
       iconColor: "text-purple-600",
       link: "Informes i Analitica",
     },
+    {
+      title: "Aigua demandada",
+      value: "800 M3",
+      change: "4.53%",
+      trend: "up",
+      color: "bg-orange-100",
+      textColor: "text-orange-900",
+      icon: TrendingUp,
+      iconBg: "bg-orange-100",
+      iconColor: "text-orange-600",
+      link: "Informes i Analitica",
+    },
   ];
 
   const costMetrics = [
@@ -151,8 +188,8 @@ export default function Dashboard() {
       title: "Aigua perduda",
       value: "200 M3",
       change: "7.36%",
-      color: "bg-teal-100",
-      iconBg: "bg-teal-100",
+      color: "bg-sky-100",
+      iconBg: "bg-sky-100",
     },
     {
       title: "Aigua demandada",
