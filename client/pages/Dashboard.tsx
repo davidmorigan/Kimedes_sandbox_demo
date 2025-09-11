@@ -148,7 +148,7 @@ export default function Dashboard() {
       icon: TrendingDown,
       iconBg: "bg-teal-100",
       iconColor: "text-teal-600",
-      link: "Informes i Analitica",
+      link: "Informes i Analítica",
     },
     {
       title: "Eficiència de la xarxa",
@@ -160,7 +160,7 @@ export default function Dashboard() {
       icon: TrendingUp,
       iconBg: "bg-purple-100",
       iconColor: "text-purple-600",
-      link: "Informes i Analitica",
+      link: "Informes i Analítica",
     },
     {
       title: "Aigua demandada",
@@ -172,7 +172,7 @@ export default function Dashboard() {
       icon: TrendingUp,
       iconBg: "bg-orange-100",
       iconColor: "text-orange-600",
-      link: "Informes i Analitica",
+      link: "Informes i Analítica",
     },
   ];
 
