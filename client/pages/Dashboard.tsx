@@ -81,10 +81,9 @@ export default function Dashboard() {
   };
 
   const handleConfigurationSection = (section: string) => {
-    // En el futur aquesta funció navegarà a la secció específica de configuració
-    console.log(`Navegant a configuració: ${section}`);
-    // TODO: Implementar navegació a la secció específica
-    // Exemple: navigate(`/configuracio/${section.toLowerCase().replace(/\s+/g, '-')}`);
+    // Navega a la subsecció de configuració
+    setActiveSection(section);
+    setSidebarOpen(false);
   };
 
   const sidebarItems = [
