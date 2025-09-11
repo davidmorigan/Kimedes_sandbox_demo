@@ -1558,6 +1558,33 @@ export default function Dashboard() {
                     </p>
                   </CardContent>
                 </Card>
+
+                {/* 12 - Documentació API (moved to last) */}
+                <Card
+                  className={`border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer ${isDarkMode ? "bg-gray-800 hover:bg-gray-750" : "bg-white hover:bg-gray-50"}`}
+                  onClick={() => handleConfigurationSection("Documentació API")}
+                >
+                  <CardContent className="p-6 relative">
+                    <span className="absolute top-2 right-3 inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded bg-orange-100 text-orange-800">2026</span>
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 bg-green-100 rounded-lg mr-4">
+                        <Book className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h3
+                          className={`font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}
+                        >
+                          Documentació API
+                        </h3>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-sm ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
+                    >
+                      Accedeix a la documentació completa de l'API i guies d'integració.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
