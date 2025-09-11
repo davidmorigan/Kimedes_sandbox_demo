@@ -111,6 +111,7 @@ export default function Dashboard() {
       icon: TrendingDown,
       iconBg: "bg-red-100",
       iconColor: "text-red-600",
+      link: "Detecció de Fuites",
     },
     {
       title: "CO2 Emès",
@@ -122,6 +123,7 @@ export default function Dashboard() {
       icon: TrendingDown,
       iconBg: "bg-teal-100",
       iconColor: "text-teal-600",
+      link: "Informes i Analitica",
     },
     {
       title: "Eficiència de la xarxa",
@@ -133,6 +135,7 @@ export default function Dashboard() {
       icon: TrendingUp,
       iconBg: "bg-purple-100",
       iconColor: "text-purple-600",
+      link: "Informes i Analitica",
     },
   ];
 
