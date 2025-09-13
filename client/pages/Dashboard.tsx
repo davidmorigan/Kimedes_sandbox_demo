@@ -564,52 +564,72 @@ export default function Dashboard() {
           /* Sostenibilitat Content */
           <div>
             <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-emerald-50"}`}>
                 <CardContent className="p-8 h-40 flex flex-col justify-between">
-                  <div>
-                    <h3 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure Informe Petjada de Carboni 2024</h3>
-                    <p className={`text-sm mt-2 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Informe detallat amb emissions estimades i recomanacions per reduir la petjada de carboni.</p>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure Informe Petjada de Carboni 2024</h3>
+                      <p className={`text-sm mt-2 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Informe detallat amb emissions estimades i recomanacions per reduir la petjada de carboni.</p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-emerald-100">
+                      <Leaf className="w-6 h-6 text-emerald-600" />
+                    </div>
                   </div>
                   <div className="text-right">
-                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Veure informe</Button>
+                    <Button className="bg-emerald-600 text-white hover:bg-emerald-700">Veure informe</Button>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-sky-50"}`}>
                 <CardContent className="p-8 h-40 flex flex-col justify-between">
-                  <div>
-                    <h3 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure petjada hídrica 2024</h3>
-                    <p className={`text-sm mt-2 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Informe sobre consum d'aigua i impacte híbrid associat a les operacions.</p>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure petjada hídrica 2024</h3>
+                      <p className={`text-sm mt-2 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Informe sobre consum d'aigua i impacte hídric associat a les operacions.</p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-sky-100">
+                      <Droplets className="w-6 h-6 text-sky-600" />
+                    </div>
                   </div>
                   <div className="text-right">
-                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Veure informe</Button>
+                    <Button className="bg-sky-600 text-white hover:bg-sky-700">Veure informe</Button>
                   </div>
                 </CardContent>
               </Card>
             </div>
 
             <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-emerald-50"}`}>
                 <CardContent className="p-6 h-32 flex flex-col justify-between">
-                  <div>
-                    <h4 className={`text-md font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}>Calcular Petjada de carboni actual</h4>
-                    <p className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Calcula la petjada de carboni basada en les dades actuals del sistema.</p>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h4 className={`text-md font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}>Calcular Petjada de carboni actual</h4>
+                      <p className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Calcula la petjada de carboni basada en les dades actuals del sistema.</p>
+                    </div>
+                    <div className="p-2 rounded-lg bg-emerald-100">
+                      <Leaf className="w-5 h-5 text-emerald-600" />
+                    </div>
                   </div>
                   <div className="text-right">
-                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Calcular</Button>
+                    <Button className="bg-emerald-600 text-white hover:bg-emerald-700">Calcular</Button>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-sky-50"}`}>
                 <CardContent className="p-6 h-32 flex flex-col justify-between">
-                  <div>
-                    <h4 className={`text-md font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}>Calcular petjada hídrica actual</h4>
-                    <p className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Calcula el consum híbrid actual per obtenir recomanacions d'estalvi.</p>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h4 className={`text-md font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}>Calcular petjada hídrica actual</h4>
+                      <p className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Calcula el consum hídric actual per obtenir recomanacions d'estalvi.</p>
+                    </div>
+                    <div className="p-2 rounded-lg bg-sky-100">
+                      <Droplets className="w-5 h-5 text-sky-600" />
+                    </div>
                   </div>
                   <div className="text-right">
-                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Calcular</Button>
+                    <Button className="bg-sky-600 text-white hover:bg-sky-700">Calcular</Button>
                   </div>
                 </CardContent>
               </Card>
