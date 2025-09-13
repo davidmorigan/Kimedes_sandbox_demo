@@ -560,6 +560,61 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        ) : activeSection === "Sostenibilitat" ? (
+          /* Sostenibilitat Content */
+          <div>
+            <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <CardContent className="p-8 h-40 flex flex-col justify-between">
+                  <div>
+                    <h3 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure Informe Petjada de Carboni 2024</h3>
+                    <p className={`text-sm mt-2 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Informe detallat amb emissions estimades i recomanacions per reduir la petjada de carboni.</p>
+                  </div>
+                  <div className="text-right">
+                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Veure informe</Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <CardContent className="p-8 h-40 flex flex-col justify-between">
+                  <div>
+                    <h3 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>Veure petjada hídrica 2024</h3>
+                    <p className={`text-sm mt-2 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Informe sobre consum d'aigua i impacte híbrid associat a les operacions.</p>
+                  </div>
+                  <div className="text-right">
+                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Veure informe</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <CardContent className="p-6 h-32 flex flex-col justify-between">
+                  <div>
+                    <h4 className={`text-md font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}>Calcular Petjada de carboni actual</h4>
+                    <p className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Calcula la petjada de carboni basada en les dades actuals del sistema.</p>
+                  </div>
+                  <div className="text-right">
+                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Calcular</Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className={`border-0 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                <CardContent className="p-6 h-32 flex flex-col justify-between">
+                  <div>
+                    <h4 className={`text-md font-medium ${isDarkMode ? "text-white" : "text-gray-900"}`}>Calcular petjada hídrica actual</h4>
+                    <p className={`text-sm mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>Calcula el consum híbrid actual per obtenir recomanacions d'estalvi.</p>
+                  </div>
+                  <div className="text-right">
+                    <Button className="bg-cyan-500 text-white hover:bg-cyan-600">Calcular</Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         ) : activeSection === "Localització de Fuites" ? (
           /* Localització de Fuites Content */
           <div>
