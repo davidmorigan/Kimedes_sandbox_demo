@@ -93,7 +93,8 @@ export default function Dashboard() {
     { icon: Droplets, label: "Detecció de Fuites" },
     { icon: MapPin, label: "Localització de Fuites" },
     { icon: BarChart3, label: "Informes i Analítica" },
-  ];
+    { icon: Leaf, label: "Sostenibilitat" },
+    ];
 
   const adminItems = [
     { icon: FileText, label: "Facturació" },
