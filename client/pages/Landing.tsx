@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Linkedin } from "lucide-react";
 
 function StatPill({ value, label }: { value: string; label: string }) {
   return (
