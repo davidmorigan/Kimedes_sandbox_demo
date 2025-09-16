@@ -25,6 +25,10 @@ function Feature({ title, desc }: { title: string; desc: string }) {
   return (
     <Card className="border-0 shadow-sm">
       <CardContent className="p-5">
+        <div
+          className="w-16 h-1 rounded-full mb-3"
+          style={{ background: "linear-gradient(90deg, var(--kimedes-primary), rgba(18,238,255,0.6))" }}
+        />
         <h3 className="font-semibold mb-1">{title}</h3>
         <p className="text-sm text-gray-600">{desc}</p>
       </CardContent>
