@@ -52,7 +52,7 @@ export default function Landing() {
       </header>
 
       {/* Hero */}
-      <main className="container mx-auto px-4 min-h-[65vh]">
+      <main className="container mx-auto px-4 flex-grow">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left copy */}
           <div className="space-y-6">
