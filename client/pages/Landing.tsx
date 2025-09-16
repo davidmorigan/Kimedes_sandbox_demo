@@ -101,8 +101,12 @@ export default function Landing() {
         </section>
 
         {/* Footer */}
-        <footer className="text-xs text-gray-500 py-12 text-center">
-          © 2025 Kimedes. Tots els drets reservats. — Deep Tech for a Blue Planet
+        <footer className="pt-8">
+          <div className="footer-sep" />
+          <div className="flex items-center justify-between text-xs text-gray-500 py-6">
+            <div>© 2025 Kimedes</div>
+            <div className="landing-footer-right">Deep Tech for a Blue Planet</div>
+          </div>
         </footer>
       </main>
     </div>
