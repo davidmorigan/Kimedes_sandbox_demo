@@ -28,12 +28,13 @@ export default function Landing() {
     <div className="min-h-screen bg-background">
       {/* Top bar */}
       <header className="container mx-auto flex items-center justify-between py-6 px-4">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-7 rounded bg-cyan-500" />
-          <span className="font-semibold">Kimedes</span>
+        <div className="flex items-center gap-4">
+          <img src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F9cdaedb9be0f4114a2a9be7241bbbc10?format=webp&width=800" alt="Kimedes" className="h-9" />
         </div>
-        <div className="hidden sm:block">
-          <div className="w-7 h-7 rounded bg-cyan-50 border flex items-center justify-center text-cyan-500">k</div>
+        <div className="flex items-center gap-4">
+          <a href="https://www.linkedin.com/company/kimedes/" target="_blank" rel="noreferrer" className="text-kimedes">
+            <Linkedin className="h-6 w-6" />
+          </a>
         </div>
       </header>
 
