@@ -46,7 +46,7 @@ export default function Landing() {
             <div className="text-sm text-gray-500">Aigua • Sostenibilitat • Estalvi</div>
             <h1 className="text-4xl md:text-5xl leading-tight font-extrabold text-gray-900">
               L'eina que tots els ajuntaments i empreses volen <br />
-              <span className="text-cyan-600">per reduir fuites d'aigua</span> i protegir el medi ambient i estalviar.
+              <span className="text-kimedes">per reduir fuites d'aigua</span> i protegir el medi ambient i estalviar.
             </h1>
             <p className="text-gray-600 max-w-xl">
               Kimedes ajuda els municipis i empreses a monitoritzar la xarxa, detectar fuites en temps real i optimitzar el consum d'aigua amb una plataforma moderna i fàcil d'usar.
