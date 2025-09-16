@@ -52,7 +52,7 @@ export default function Landing() {
               Kimedes ajuda els municipis i empreses a monitoritzar la xarxa, detectar fuites en temps real i optimitzar el consum d'aigua amb una plataforma moderna i fàcil d'usar.
             </p>
             <div className="flex items-center gap-4">
-              <Button className="bg-cyan-600 hover:bg-cyan-700 text-white rounded-full px-6 py-6 h-12">
+              <Button className="btn-kimedes rounded-full px-6 py-6 h-12">
                 Contacta i reserva per una demo
               </Button>
             </div>
