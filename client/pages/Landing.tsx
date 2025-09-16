@@ -52,7 +52,7 @@ export default function Landing() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left copy */}
           <div className="space-y-6">
-            <div className="text-sm text-gray-500">Aigua • Sostenibilitat • Estalvi</div>
+            <div className="text-sm text-gray-500 mt-6">Aigua • Sostenibilitat • Estalvi</div>
             <h1 className="text-4xl md:text-5xl leading-tight font-extrabold text-gray-900">
               L'eina que tots els ajuntaments i empreses volen <br />
               <span className="text-kimedes">per reduir fuites d'aigua</span> i protegir el medi ambient i estalviar.
