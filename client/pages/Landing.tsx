@@ -38,7 +38,7 @@ function Feature({ title, desc }: { title: string; desc: string }) {
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       {/* Top bar */}
       <header className="container mx-auto flex items-center justify-between py-6 px-4 border-b">
         <div className="flex items-center gap-4">
