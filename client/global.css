@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,6 +55,8 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --kimedes-primary: #12eeff;
   }
 
   .dark {
@@ -104,3 +107,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Kimedes branding utilities */
+.bg-kimedes { background-color: var(--kimedes-primary); }
+.text-kimedes { color: var(--kimedes-primary); }
+.btn-kimedes { background-color: var(--kimedes-primary); color: white; }
+.footer-sep { border-top: 1px solid rgba(0,0,0,0.08); }
+.landing-footer-right { font-family: 'Open Sans', sans-serif; font-weight: 700; }
