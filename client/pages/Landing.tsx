@@ -6,7 +6,7 @@ import { Linkedin } from "lucide-react";
 function StatPill({ value, label }: { value: string; label: string }) {
   return (
     <div className="rounded-xl border bg-white shadow-sm px-4 py-3 flex flex-col items-center text-center">
-      <div className="text-xl font-bold text-cyan-600">{value}</div>
+      <div className="text-xl font-bold text-kimedes">{value}</div>
       <div className="text-xs text-gray-600">{label}</div>
     </div>
   );
