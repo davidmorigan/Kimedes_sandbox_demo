@@ -123,7 +123,7 @@ export default function Landing() {
         </div>
 
         {/* Feature cards */}
-        <section className="grid md:grid-cols-3 gap-4 mt-12">
+        <section className="grid md:grid-cols-3 gap-6 mt-20">
           <Feature
             title="Sensors i IA"
             desc="Anàlisi avançada per preveure fuites i optimitzar la pressió."
