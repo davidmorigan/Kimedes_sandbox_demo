@@ -27,7 +27,10 @@ function Feature({ title, desc }: { title: string; desc: string }) {
       <CardContent className="p-6 min-h-[180px] flex flex-col justify-start">
         <div
           className="w-16 h-1 rounded-full mb-3"
-          style={{ background: "linear-gradient(90deg, var(--kimedes-primary), rgba(18,238,255,0.6))" }}
+          style={{
+            background:
+              "linear-gradient(90deg, var(--kimedes-primary), rgba(18,238,255,0.6))",
+          }}
         />
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <p className="text-base text-gray-700">{desc}</p>
@@ -42,10 +45,19 @@ export default function Landing() {
       {/* Top bar */}
       <header className="container mx-auto flex items-center justify-between py-6 px-4 border-b">
         <div className="flex items-center gap-4">
-          <img src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F9cdaedb9be0f4114a2a9be7241bbbc10?format=webp&width=800" alt="Kimedes" className="h-9" />
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F8ca8cdea80004f6a93dbdda141395da4%2F9cdaedb9be0f4114a2a9be7241bbbc10?format=webp&width=800"
+            alt="Kimedes"
+            className="h-9"
+          />
         </div>
         <div className="flex items-center gap-4">
-          <a href="https://www.linkedin.com/company/kimedes/" target="_blank" rel="noreferrer" className="text-kimedes">
+          <a
+            href="https://www.linkedin.com/company/kimedes/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-kimedes"
+          >
             <Linkedin className="h-6 w-6" />
           </a>
         </div>
@@ -56,13 +68,18 @@ export default function Landing() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left copy */}
           <div className="space-y-6">
-            <div className="text-sm text-gray-500 mt-6">Aigua • Sostenibilitat • Estalvi</div>
+            <div className="text-sm text-gray-500 mt-6">
+              Aigua • Sostenibilitat • Estalvi
+            </div>
             <h1 className="text-4xl md:text-5xl leading-tight font-extrabold text-gray-900">
               L'eina que tots els ajuntaments i empreses volen <br />
-              <span className="text-kimedes">per reduir fuites d'aigua</span> i protegir el medi ambient i estalviar.
+              <span className="text-kimedes">per reduir fuites d'aigua</span> i
+              protegir el medi ambient i estalviar.
             </h1>
             <p className="text-gray-600 max-w-xl">
-              Kimedes ajuda els municipis i empreses a monitoritzar la xarxa, detectar fuites en temps real i optimitzar el consum d'aigua amb una plataforma moderna i fàcil d'usar.
+              Kimedes ajuda els municipis i empreses a monitoritzar la xarxa,
+              detectar fuites en temps real i optimitzar el consum d'aigua amb
+              una plataforma moderna i fàcil d'usar.
             </p>
             <div className="flex items-center gap-4">
               <Dialog>
@@ -76,14 +93,18 @@ export default function Landing() {
                   <DialogHeader>
                     <DialogTitle>Contacta l'equip</DialogTitle>
                     <DialogDescription>
-                      Demana una demo personalitzada perquè vegis com Kimedes pot ajudar el teu municipi o empresa.
+                      Demana una demo personalitzada perquè vegis com Kimedes
+                      pot ajudar el teu municipi o empresa.
                     </DialogDescription>
                   </DialogHeader>
 
                   <div className="py-4 text-sm text-gray-700">
-                    Escriu a <a className="text-kimedes font-medium">info@kimedes.ai</a> i rebràs una resposta de l'equip en menys de 24h.
-
-                    <p className="mt-3">Gràcies perquè cada gota s'ha de protegir!</p>
+                    Escriu a{" "}
+                    <a className="text-kimedes font-medium">info@kimedes.ai</a>{" "}
+                    i rebràs una resposta de l'equip en menys de 24h.
+                    <p className="mt-3">
+                      Gràcies perquè cada gota s'ha de protegir!
+                    </p>
                   </div>
 
                   <DialogFooter>
@@ -114,7 +135,8 @@ export default function Landing() {
               >
                 <div className="w-full h-full bg-black/20 flex items-center justify-center p-6">
                   <p className="text-white/95 text-center max-w-md text-sm md:text-base avenir-light">
-                    Plataforma amb IA per detectar, prioritzar i resoldre fuites amb algoritmes i dades en temps real.
+                    Plataforma amb IA per detectar, prioritzar i resoldre fuites
+                    amb algoritmes i dades en temps real.
                   </p>
                 </div>
               </div>
@@ -137,7 +159,6 @@ export default function Landing() {
             desc="APIs i compatibilitat amb la teva infraestructura actual."
           />
         </section>
-
       </main>
 
       {/* Footer */}
@@ -146,11 +167,12 @@ export default function Landing() {
           <div className="footer-sep" />
           <div className="flex items-center justify-between text-xs text-gray-500 py-6">
             <div>© 2025 Kimedes</div>
-            <div className="landing-footer-right">Deep Tech for a Blue Planet</div>
+            <div className="landing-footer-right">
+              Deep Tech for a Blue Planet
+            </div>
           </div>
         </div>
       </footer>
-
     </div>
   );
 }

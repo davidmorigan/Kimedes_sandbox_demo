@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -106,15 +106,30 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-weight: 300;
   }
 }
 
 /* Kimedes branding utilities */
-.bg-kimedes { background-color: var(--kimedes-primary); }
-.text-kimedes { color: var(--kimedes-primary); }
-.btn-kimedes { background-color: var(--kimedes-primary); color: white; }
-.footer-sep { border-top: 1px solid rgba(0,0,0,0.08); }
-.landing-footer-right { font-family: 'Open Sans', sans-serif; font-weight: 700; }
-.avenir-light { font-family: 'Open Sans', Arial, sans-serif; font-weight: 300; }
+.bg-kimedes {
+  background-color: var(--kimedes-primary);
+}
+.text-kimedes {
+  color: var(--kimedes-primary);
+}
+.btn-kimedes {
+  background-color: var(--kimedes-primary);
+  color: white;
+}
+.footer-sep {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.landing-footer-right {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+.avenir-light {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 300;
+}
