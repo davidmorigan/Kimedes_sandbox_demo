@@ -24,7 +24,7 @@ function StatPill({ value, label }: { value: string; label: string }) {
 function Feature({ title, desc }: { title: string; desc: string }) {
   return (
     <Card className="border-0 shadow-sm">
-      <CardContent className="p-5">
+      <CardContent className="p-6 min-h-[180px] flex flex-col justify-start">
         <div
           className="w-16 h-1 rounded-full mb-3"
           style={{ background: "linear-gradient(90deg, var(--kimedes-primary), rgba(18,238,255,0.6))" }}
