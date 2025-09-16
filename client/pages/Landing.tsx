@@ -138,15 +138,19 @@ export default function Landing() {
           />
         </section>
 
-        {/* Footer */}
-        <footer className="pt-16">
+      </main>
+
+      {/* Footer */}
+      <footer className="pt-16">
+        <div className="container mx-auto px-4">
           <div className="footer-sep" />
           <div className="flex items-center justify-between text-xs text-gray-500 py-6">
             <div>© 2025 Kimedes</div>
             <div className="landing-footer-right">Deep Tech for a Blue Planet</div>
           </div>
-        </footer>
-      </main>
+        </div>
+      </footer>
+
     </div>
   );
 }
