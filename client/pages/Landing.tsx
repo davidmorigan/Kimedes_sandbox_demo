@@ -29,8 +29,8 @@ function Feature({ title, desc }: { title: string; desc: string }) {
           className="w-16 h-1 rounded-full mb-3"
           style={{ background: "linear-gradient(90deg, var(--kimedes-primary), rgba(18,238,255,0.6))" }}
         />
-        <h3 className="font-semibold mb-1">{title}</h3>
-        <p className="text-sm text-gray-600">{desc}</p>
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <p className="text-base text-gray-700">{desc}</p>
       </CardContent>
     </Card>
   );
